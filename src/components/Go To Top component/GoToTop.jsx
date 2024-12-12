@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { animateScroll as scroll } from "react-scroll"; // Importing animateScroll directly
+import { animateScroll as scroll } from "react-scroll"; 
 
 
 const GoToTop = () => {
