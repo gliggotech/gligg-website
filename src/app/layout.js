@@ -1,14 +1,25 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins, Questrial, Roboto } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/navbar component/Navbar";
+import Footer from "@/components/footer component/Footer";
+import GoToTop from "@/components/Go To Top component/GoToTop";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const roboto = Roboto({
   subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+  variable: "--font-roboto",
+});
+
+const questrial = Questrial({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-questrial",
 });
 
 export const metadata = {
@@ -20,9 +31,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${roboto.variable} ${questrial.variable} antialiased`}
       >
-        {children}
+        <Navbar />
+        <div className="bg-white pt-24">{children}
+          <GoToTop/>
+        </div>
+
+        <Footer />
       </body>
     </html>
   );
