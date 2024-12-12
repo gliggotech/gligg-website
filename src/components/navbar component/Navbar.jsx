@@ -49,12 +49,12 @@ export const Navbar = () => {
     <nav className="overflow-hidden text-black ">
       {/* Desktop navbar */}
       <div className="bg-customGray py-3 fixed top-0 w-full z-10 overflow-hidden rounded-br-md rounded-bl-md shadow-dark_shadow hover:shadow-dark_navbar_shadow_hover">
-        <div className="flex justify-between items-center px-7 xl:px-10">
+        <div className="flex justify-between bg-transparent items-center px-7 xl:px-10">
           {/* Logo */}
-          <div className="flex items-center max-w-36 md:ml-8 xl:ml-10  ">
+          <div className=" md:ml-6 xl:ml-10  ">
             <Link
               href="/"
-              className="flex relative w-20 h-20  items-center shadow-logo-shadow rounded-lg"
+              className="flex relative  w-20 h-10 sm:w-24 sm:h-14 md:h-16 md:w-28  lg:w-32     shadow-logo-shadow rounded-lg"
             >
               <Image
                 src={"/image_03.png"}
@@ -62,7 +62,7 @@ export const Navbar = () => {
                 fill
                 priority
                 quality={100}
-                className="object-cover object-center w-full py-1 h-[75px] rounded-lg bg-none shadow-[0px_10px_80px_-100px_rgb(44,172,104),1px_0px_10px_0px_rgb(44,172,104)] text-center transform transition-transform duration-300 hover:scale-105"
+                className="object-contain   rounded-lg bg-none shadow-[0px_10px_80px_-100px_rgb(44,172,104),1px_0px_10px_0px_rgb(44,172,104)] text-center transform transition-transform duration-300 hover:scale-105"
               />
             </Link>
           </div>
