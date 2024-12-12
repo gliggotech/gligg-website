@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         <div className="bg-white pt-24">{children}
-          <GoToTop/>
+          {/* <GoToTop/> */}
         </div>
 
         <Footer />
