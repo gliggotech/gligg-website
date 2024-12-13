@@ -254,7 +254,7 @@ const Footer = () => {
               <h1 className="text-lg sm:text-xl text-center md:text-left">
                 Americas - Canada
               </h1>
-              <br />
+        
               <p className="text-sm sm:text-base text-center md:text-left">
                 <a
                   href={`https://www.google.com/maps/search/${contactInfo.address1}+${contactInfo.address2}`.replace(

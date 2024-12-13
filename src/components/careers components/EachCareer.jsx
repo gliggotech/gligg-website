@@ -13,7 +13,7 @@ const EachCareer = ({ job }) => {
   }, []);
 
   return (
-    <div className="relative  z-40">
+    <div className="relative mt-[6px]  z-40">
       <div className="text-center py-12 bg-black text-white font-Questrial p-5 xl:px-36">
         <div className="flex flex-col gap-y-6 sm:px-28">
           <div className="flex flex-col justify-center items-center">

@@ -45,7 +45,7 @@ export const contactInfo = {
   email: "info@gliggo.com",
   address1: "Suite 108 - 420 Britannia Road East",
   address2: "Mississauga, ON L4Z 3L5",
-  addressIndia: "57/1-A VOC Nagar 2nd Street,",
+  addressIndia: "57/1-A VOC Nagar 2nd Cross Street,",
   addressIndia_Region: "Anna Nagar East,",
   addressIndia_City: "Chennai- 600 102,",
   addressIndia_State: "Tamil Nadu, India",
