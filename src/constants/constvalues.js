@@ -1,18 +1,4 @@
-// import manAvatar from "../assets/man_avatar.jpg";
-// import manAvatar2 from "../assets/man_avatar2.jpg";
-// import femaleavatar from "../assets/femaleavatar.jpg";
-// import abdhul from "../assets/AbdulRahim.jpg";
-// import furqaan from "../assets/furqaan.webp";
-// import drahmedmian from "../assets/drahmedmian.png";
-// import muruganantham from "../assets/muruganantham.jpg";
-// import config from "../../tailwind.config";
-// import billing from "../assets/billing.webp";
-// import crmportal from "../assets/crmportal.webp";
-// import fullstack from "../assets/fullstack.webp";
-// import servicepayment from "../assets/servicepayment.webp";
-// import service01 from "../assets/service01.jpg";
-// import service02 from "../assets/service002.png";
-// import service03 from "../assets/service03.jpg";
+
 
 // Navigation links
 export const navlinks = [
@@ -424,20 +410,7 @@ export const careers = [
     slug_url: "chartered-accountant",
   },
 ];
-// export const middlewareFunctionsEndpointStub =
-//   "https://gliggo-site-middleware.azurewebsites.net/api/";
-// export const webInfo = {
-//   url:
-//     "http://localhost:3001" ||
-//     "https://gliggo.com" ||
-//     "https://www.gliggo.com" ||
-//     "https://kind-bush-09c53f90f.5.azurestaticapps.net/", //TODO manage this in an .env
-//   company_name: "Gliggo Technologies India Private Limited",
-//   contactFunctionsEndpoint: `${middlewareFunctionsEndpointStub}httpTriggerContactGliggo`,
-//   // contactFunctionsEndpoint: "https://gliggocontactfunction.azurewebsites.net/api/httpTriggerContactGliggo",
-//   collectNewsletterSubscribersEndpoint: `${middlewareFunctionsEndpointStub}storeSubscriberEmail`,
-//   //TODO make one to accept job applications
-// };
+
 export const industries_const = [
   {
     title: "Business Process Outsourcing (BPO)",
@@ -734,10 +707,10 @@ export const middlewareFunctionsEndpointStub =
   "https://gliggo-site-middleware.azurewebsites.net/api/";
 export const webInfo = {
   url:
-    "http://localhost:3001" ||
+    "http://localhost:3000" ||
     "https://gliggo.com" ||
     "https://www.gliggo.com" ||
-    "https://kind-bush-09c53f90f.5.azurestaticapps.net/", //TODO manage this in an .env
+    "https://mygliggowebsite.vercel.app/", //TODO manage this in an .env
   company_name: "Gliggo Technologies India Private Limited",
   contactFunctionsEndpoint: `${middlewareFunctionsEndpointStub}httpTriggerContactGliggo`,
   // contactFunctionsEndpoint: "https://gliggocontactfunction.azurewebsites.net/api/httpTriggerContactGliggo",
