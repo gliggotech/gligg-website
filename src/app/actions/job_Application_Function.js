@@ -58,7 +58,7 @@ export async function job_apply(formData) {
       message: "Application submitted successfully",
     };
   } catch (error) {
-    console.error("Email sending error:", error);
+   
     return {
       success: false,
       message: "Failed to submit application",

@@ -26,7 +26,7 @@ const Contact_Form = () => {
   // Function to handle form submission
   const handlesubmit = async (data) => {
     const result = await sendRequest(() => contactFunction(data));
-    console.log(result);
+
     if(result.success) setModalVisible(true);
   };
 
