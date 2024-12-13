@@ -6,21 +6,7 @@ import Link from "next/link";
 
 const Industry = ({ industry }) => {
   const indbg = industry.background;
-  let redirect_url;
-
-    if (industry.title == "Business Process Outsourcing") {
-      redirect_url = "/bpo";
-   
-    }
-    if (industry.title == "Software Development") {
-      redirect_url = "/software_development";
-   
-    }
-    if (industry.title == "Managed IT Services") {
-      redirect_url = "/cloud";
-   
-    }
-
+ 
   return (
     // Main container for an industry
     <div
@@ -57,7 +43,7 @@ const Industry = ({ industry }) => {
         {/* Bottom content of the industry */}
         <div>
           {industry.bottomcontent}
-          <Link href={redirect_url}
+          <Link href={industry.slug}
             className={`ml-1 underline text cursor-pointer text-nowrap ${
               indbg == "#f4f4f4" ? "text-[#2CAC68]" : "text-[#f4f4f4]"
             }`}

@@ -1,7 +1,7 @@
-"use client"
-import  { useEffect, useRef, useState } from "react";
-import {  animateScroll as scroll } from "react-scroll"; // Importing Link and scroll from react-scroll package
- // Importing useLocation and useParams hooks
+"use client";
+import { useEffect, useRef, useState } from "react";
+import { animateScroll as scroll } from "react-scroll"; // Importing Link and scroll from react-scroll package
+// Importing useLocation and useParams hooks
 // import Recaptcha from "../../Recaptcha";
 import {
   FaExternalLinkAlt,
@@ -9,85 +9,55 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
-import { usePathname } from "next/navigation";
 import Text_Animation from "@/components/Animations/Text_Animation";
-import { contactInfo, navlinks, socialLinks } from "@/constants/constvalues";
+import {
+  contactInfo,
+  navlinks,
+  socialLinks,
+
+} from "@/constants/constvalues";
 import Link from "next/link";
+import { useForm } from "react-hook-form";
+import { useRequest } from "@/custom hooks/useRequest";
+import newsletterFunction from "@/app/actions/subscribeFunction";
 
 const Footer = () => {
   const year = new Date().getFullYear(); // Getting the current year
-  const ref = useRef();
-    const pathname=usePathname();
-  // Getting the current location path
-  const location = pathname.split("/");
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
-  const [success, setSuccess] = useState(""); // State for success message
-  const [error, setError] = useState(""); // State for error message
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch,
+    reset
+  } = useForm({
+    defaultValues: {
+      subscribed: false,
+    },
+  });
   const [modalVisible, setModalVisible] = useState(false);
+  const { loading, success, error, sendRequest, setSuccess, setError } =
+    useRequest();
 
-  // Scroll to specified section on mount or location change
-  useEffect(() => {
-    const scrollToGeroSection = () => {
-      const target = location[1] !== "" ? location[1] : "home";
-      scroll.scrollTo(target, {
-        smooth: true,
-        duration: 500,
-        offset: 0,
-      });
-    };
-    scrollToGeroSection();
-  }, []);
-  const handleSubscribe = (e) => {
-    setModalVisible(true);
-
-    e.preventDefault();
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression pattern for email validation
-
-    if (email && emailPattern.test(email) && subscribed) {
-      // Simulate subscription process with setTimeout
-
-      setTimeout(() => {
-        //send data to the Azure function
-        try {
-          fetch(webInfo.collectNewsletterSubscribersEndpoint, {
-            method: "POST",
-            body: JSON.stringify({
-              email: email,
-            }),
-          });
-        } catch (error) {
-          console.error("Error:", error);
-        }
-        setSuccess(
-          "Congratulations! Your subscription has been successfully processed."
-        ); // Set success message
-        setError(""); // Clear any previous error message
-        setEmail(""); // Clear the email input after successful subscription
-        setSubscribed(false); // Reset the subscription checkbox
-        if (ref.current) {
-          ref.current.reset();
-        }
-      }, 1000); // Simulating a delay for demonstration purposes
-    } else {
-      if (!email || !emailPattern.test(email)) {
-        setError("Please enter a valid email address."); // Set error message for invalid email
-        if (ref.current) {
-          ref.current.reset();
-        }
-        return;
-      } else {
-        setError("Please toggle the switch to subscribe."); // Set error message for unchecked subscription box
-        if (ref.current) {
-          ref.current.reset();
-        }
-        return;
-      }
-      // setSuccess(""); // Clear any previous success message
+  // Watch the checkbox state
+  const subscribed = watch("subscribed");
+  const onSubmit = async (data) => {
+    const res = await sendRequest(() => newsletterFunction(data));
+    if (res.success) {
+      setModalVisible(true);
+    }
+    if (res.success == false) {
+      setTimeout(()=>
+      {
+        setError("")
+        reset();
+      },5000)
     }
   };
+
+  
   const handleOk = () => {
     setModalVisible(false);
+    reset();
     setSuccess(""); // Clear any previous success message
     setError(""); // Clear any previous error message
   };
@@ -156,14 +126,16 @@ const Footer = () => {
           </div>
           {/* Newsletter Subscription Form */}
           <form
-            onSubmit={handleSubscribe}
+            onSubmit={handleSubmit(onSubmit)}
             className="flex flex-1 flex-col gap-y-5 text-xl px-3 font-Questrial"
           >
             <h4>Subscribe to our weekly newsletter.</h4>
+
             <small>
               We promise never to send you spam! Only important news to stay
               up-to-date!
             </small>
+
             <label className="input input-bordered flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -174,57 +146,69 @@ const Footer = () => {
                 <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
                 <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
               </svg>
+
               <span className="font-bold -ml-2 mb-1 text-customGreen">*</span>
+
               <input
                 type="text"
-                className="p-3 pl-[20px]  line-clamp-5 grow outline-none text-[18px] placeholder-[#D1D5DB] placeholder-opacity-100 bg-customGray shadow-[inset_2px_2px_8px_rgba(0,0,0,0.2),inset_2px_2px_8px_rgba(0,0,0,0.2)]  rounded-xl text-black "
+                className="p-3 pl-[20px] line-clamp-5 grow outline-none text-[18px] placeholder-[#D1D5DB] placeholder-opacity-100 bg-customGray shadow-[inset_2px_2px_8px_rgba(0,0,0,0.2),inset_2px_2px_8px_rgba(0,0,0,0.2)] rounded-xl text-black"
                 placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: "Invalid email address",
+                  },
+                })}
               />
             </label>
+
+            {errors.email && (
+              <p className="text-red-500 text-sm -mt-4">
+                {errors.email.message}
+              </p>
+            )}
+
             <div className="flex gap-x-2 items-center">
               <div className="mt-2">
                 <input
                   type="checkbox"
                   className="relative
-                  appearance-none 
-                  inline-block
-                  h-[26px]
-                
-                  w-[50px]
-                  cursor-pointer
-                  rounded-full
-               bg-customGray
-                  
-                  shadow-[inset_0px_0px_10px_rgba(0,0,0,0.25),inset_-0px_0px_10px_rgba(0,0,0,0.25)]
-                  transition-all
-                  after:content-['']
-                  after:absolute
-                  after:top-[0.7px]
-                  after:left-[-0px]
-                  after:w-6
-                 
-                  after:h-6
-                  after:bg-customGray
-                  after:rounded-full
-                  after:shadow-dark_shadow_hover
-                  after:transition-all
-                  checked:bg-customGreen
-                  checked:after:translate-x-[26px]
-                  "
-                  checked={subscribed}
-                  onChange={() => setSubscribed(!subscribed)}
+            appearance-none
+            inline-block
+            h-[26px]
+            w-[50px]
+            cursor-pointer
+            rounded-full
+            bg-customGray
+            shadow-[inset_0px_0px_10px_rgba(0,0,0,0.25),inset_-0px_0px_10px_rgba(0,0,0,0.25)]
+            transition-all
+            after:content-['']
+            after:absolute
+            after:top-[0.7px]
+            after:left-[-0px]
+            after:w-6
+            after:h-6
+            after:bg-customGray
+            after:rounded-full
+            after:shadow-dark_shadow_hover
+            after:transition-all
+            checked:bg-customGreen
+            checked:after:translate-x-[26px]"
+                  {...register("subscribed")}
                 />
               </div>
               <div className="text-[18px] sm:text-xl">
                 Yes, subscribe me to your newsletter.
               </div>
             </div>
-            {/* {subscribed && <Recaptcha ref={ref} />} */}
-
-            <button className="self-center shadow-dark_shadow hover:shadow-dark_shadow_hover flex items-center justify-center w-full md:max-w-sm px-5 py-2 bg-black text-customGreen rounded-tr-full rounded-br-full rounded-tl-full hover:bg-gradient-to-tr from-[#2CAC68]  to-green-700 hover:text-black font-Questrial">
-              Subscribe
+            {success && <p className="text-green-500">{success}</p>}
+            {error && <p className="text-red-500">{error}</p>}
+            <button
+              type="submit"
+              className="self-center shadow-dark_shadow hover:shadow-dark_shadow_hover flex items-center justify-center w-full md:max-w-sm px-5 py-2 bg-black text-customGreen rounded-tr-full rounded-br-full rounded-tl-full hover:bg-gradient-to-tr from-[#2CAC68]  to-green-700 hover:text-black font-Questrial"
+            >
+              {loading ? "Loading..." : "Subscribe"}
             </button>
           </form>
         </section>
@@ -347,13 +331,12 @@ const Footer = () => {
 
       {/* Footer Text */}
       <div className="font-Poppins text-black py-2 px-10 mb-5 text-center bg-white">
-  <div>
-    <span>Copyright ©</span> {year}{" "}
-    <span className="text-green-700">Gliggo Inc.</span>{" "}
-    <span> All rights reserved.</span>
-  </div>
-</div>
-
+        <div>
+          <span>Copyright ©</span> {year}{" "}
+          <span className="text-green-700">Gliggo Inc.</span>{" "}
+          <span> All rights reserved.</span>
+        </div>
+      </div>
     </footer>
   );
 };

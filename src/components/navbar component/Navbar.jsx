@@ -88,7 +88,7 @@ export const Navbar = () => {
                         {value.name}
                       </Link>
                     ) : (
-                      <a
+                      <Link
                         href={value.url}
                         target="_blank"
                         className={`py-3 border-customGreen cursor-pointer px-3 relative transition-colors shadow-[4px_4px_8px_#00000044] hover:shadow-[6px_6px_12px_#00000066] rounded-lg ${
@@ -100,7 +100,7 @@ export const Navbar = () => {
                         <div className="absolute inset-0 rounded-lg"></div>
                         {value.name}
                         <FaExternalLinkAlt className="inline-block ml-2" />
-                      </a>
+                      </Link>
                     )}
                   </div>
                 </li>

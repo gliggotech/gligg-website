@@ -49,7 +49,7 @@ export const navlinks = [
   {
     id: 7,
     name: "Gliggo Investments",
-    url: "/gliggoinvestments.com", //TODO http://gliggoinvestments.com
+    url: "/gliggo-investments", //TODO http://gliggoinvestments.com
   },
 ];
 export const invalidRoutes = ["/gliggoinvestments.com"];
@@ -226,6 +226,7 @@ export const industries = [
   {
     id: 1,
     title: "Business Process Outsourcing",
+    slug: "bpo",
     topcontent:
       "We outsource business processes from Canadian and US-based businesses to our offshore offices in India and Dubai.",
     listtitle: "We specialize in:",
@@ -251,6 +252,7 @@ export const industries = [
   {
     id: 2,
     title: "Software Development",
+    slug: "software_development",
     topcontent:
       "We are a full-blown software development company specializing in developing cloud-based solutions to meet various needs of our clients.",
     listtitle: "Some projects we've worked on include:",
@@ -277,6 +279,7 @@ export const industries = [
   {
     id: 3,
     title: "Managed IT Services",
+    slug: "cloud_solutions",
     topcontent:
       "At Gliggo Inc., we specialize in providing comprehensive Managed IT Services to effectively support your business operations.",
     listtitle: "We offer managed IT services ranging from:",
@@ -292,7 +295,7 @@ export const industries = [
     bottomcontent:
       "Partner with Gliggo Inc. for top-notch Managed IT Services that are tailored to your business requirements and executed with expertise to propel your organization towards success.",
     background: "#f4f4f4",
-    bgimage:"/service03.jpg",
+    bgimage: "/service03.jpg",
     suggestionPrompt:
       "Share your ideas to enhance IT infrastructure. Your feedback shapes our future solutions!",
   },
@@ -395,7 +398,7 @@ export const careers = [
       " Master's or PhD in Machine-Learning, Data Science or another closely-related discipline.",
     location: "Onsite/Hybrid",
     field: "Development",
-    slug_url:"python-developer-(ai-automation-machine-learning)",
+    slug_url: "python-developer-(ai-automation-machine-learning)",
     type_of_work: "Full-time",
   },
   {
@@ -418,7 +421,7 @@ export const careers = [
     location: "Onsite/Hybrid",
     field: "Accounting",
     type_of_work: "Full-time",
-    slug_url:"chartered-accountant",
+    slug_url: "chartered-accountant",
   },
 ];
 // export const middlewareFunctionsEndpointStub =
@@ -435,267 +438,272 @@ export const careers = [
 //   collectNewsletterSubscribersEndpoint: `${middlewareFunctionsEndpointStub}storeSubscriberEmail`,
 //   //TODO make one to accept job applications
 // };
-// export const bpo_content = {
-//   title: "Business Process Outsourcing (BPO)",
-//   description:
-//     "At Gliggo, we pride ourselves on offering second-to-none Business Process Outsourcing (BPO) services. No matter the size of your business or the complexity of your tasks, we have tailor-made solutions that fit your unique needs.",
-//   whytitle: "Why Choose Gliggo for BPO Services?",
+export const industries_const = [
+  {
+    title: "Business Process Outsourcing (BPO)",
+    slug: "bpo",
+    description:
+      "At Gliggo, we pride ourselves on offering second-to-none Business Process Outsourcing (BPO) services. No matter the size of your business or the complexity of your tasks, we have tailor-made solutions that fit your unique needs.",
+    whytitle: "Why Choose Gliggo for BPO Services?",
 
-//   whyChoose: [
-//     {
-//       title: "Expertise Across Industries",
-//       description:
-//         "Our team consists of seasoned professionals with extensive experience across various industries.",
-//     },
-//     {
-//       title: "Cost Efficiency",
-//       description:
-//         "By outsourcing your business processes to Gliggo, you can significantly reduce operational costs.",
-//     },
-//     {
-//       title: "Focus on Core Business",
-//       description:
-//         "Outsourcing non-core functions to Gliggo allows you to focus on what you do best—growing your business.",
-//     },
-//     {
-//       title: "Access to Advanced Technology",
-//       description:
-//         "We leverage the latest technologies and tools to ensure that your business processes are efficient, secure, and up-to-date.",
-//     },
-//     {
-//       title: "Scalability",
-//       description:
-//         "Whether you're a small startup or a large enterprise, our services are scalable to match your business growth.",
-//     },
-//     {
-//       title: "Enhanced Customer Experience",
-//       description:
-//         "Our BPO services are designed to improve the customer experience by ensuring prompt and effective handling of customer queries and issues.",
-//     },
-//   ],
-//   service_title: " Our BPO Services Include:",
-//   services: [
-//     {
-//       title: "Customer Support",
-//       description:
-//         "24/7 customer service, Multichannel support (phone, email, chat), Complaint resolution",
-//       tags: ["Customer Support", "Multichannel", "Complaint Resolution"],
-//       path: `bpo/customer_support.jpg`,
-//     },
-//     {
-//       title: "Finance and Accounting",
-//       description:
-//         "Bookkeeping, Payroll processing, Financial reporting and analysis",
-//       tags: ["Finance", "Accounting", "Financial Reporting"],
-//       path: `bpo/finance.jpg`,
-//     },
-//     {
-//       title: "Human Resources",
-//       description:
-//         "Recruitment and onboarding, Employee benefits administration, Performance management",
-//       tags: ["Human Resources", "Recruitment", "Employee Benefits"],
-//       path: `bpo/hr.jpg`,
-//     },
-//     {
-//       title: "IT Support",
-//       description:
-//         "Helpdesk services, Network management, Software development and maintenance",
-//       tags: ["IT Support", "Network Management", "Software Development"],
-//       path: `bpo/it_support.jpg`,
-//     },
-//     {
-//       title: "Data Management",
-//       description:
-//         "Data entry and processing, Data analysis and reporting, Document management",
-//       tags: ["Data Management", "Data Analysis", "Document Management"],
-//       path: `bpo/data_management.jpg`,
-//     },
-//     {
-//       title: "Marketing Services",
-//       description:
-//         "Digital marketing, Social media management, Content creation",
-//       tags: ["Marketing", "Digital Marketing", "Content Creation"],
-//       path: `bpo/marketing.jpg`,
-//     },
-//   ],
-//   testimonials: reviews,
-// };
+    whyChoose: [
+      {
+        title: "Expertise Across Industries",
+        description:
+          "Our team consists of seasoned professionals with extensive experience across various industries.",
+      },
+      {
+        title: "Cost Efficiency",
+        description:
+          "By outsourcing your business processes to Gliggo, you can significantly reduce operational costs.",
+      },
+      {
+        title: "Focus on Core Business",
+        description:
+          "Outsourcing non-core functions to Gliggo allows you to focus on what you do best—growing your business.",
+      },
+      {
+        title: "Access to Advanced Technology",
+        description:
+          "We leverage the latest technologies and tools to ensure that your business processes are efficient, secure, and up-to-date.",
+      },
+      {
+        title: "Scalability",
+        description:
+          "Whether you're a small startup or a large enterprise, our services are scalable to match your business growth.",
+      },
+      {
+        title: "Enhanced Customer Experience",
+        description:
+          "Our BPO services are designed to improve the customer experience by ensuring prompt and effective handling of customer queries and issues.",
+      },
+    ],
+    service_title: " Our BPO Services Include:",
+    services: [
+      {
+        title: "Customer Support",
+        description:
+          "24/7 customer service, Multichannel support (phone, email, chat), Complaint resolution",
+        tags: ["Customer Support", "Multichannel", "Complaint Resolution"],
+        path: `/bpo/customer_support.jpg`,
+      },
+      {
+        title: "Finance and Accounting",
+        description:
+          "Bookkeeping, Payroll processing, Financial reporting and analysis",
+        tags: ["Finance", "Accounting", "Financial Reporting"],
+        path: `/bpo/finance.jpg`,
+      },
+      {
+        title: "Human Resources",
+        description:
+          "Recruitment and onboarding, Employee benefits administration, Performance management",
+        tags: ["Human Resources", "Recruitment", "Employee Benefits"],
+        path: `/bpo/hr.jpg`,
+      },
+      {
+        title: "IT Support",
+        description:
+          "Helpdesk services, Network management, Software development and maintenance",
+        tags: ["IT Support", "Network Management", "Software Development"],
+        path: `/bpo/it_support.jpg`,
+      },
+      {
+        title: "Data Management",
+        description:
+          "Data entry and processing, Data analysis and reporting, Document management",
+        tags: ["Data Management", "Data Analysis", "Document Management"],
+        path: `/bpo/data_management.jpg`,
+      },
+      {
+        title: "Marketing Services",
+        description:
+          "Digital marketing, Social media management, Content creation",
+        tags: ["Marketing", "Digital Marketing", "Content Creation"],
+        path: `/bpo/marketing.jpg`,
+      },
+    ],
+    testimonials: reviews,
+  },
+  {
+    title: "Software Development",
+    slug: "software_development",
+    description:
+      "At Gliggo, we are a leader in software development, boasting a dedicated team of skilled and experienced software professionals who strive to deliver the perfect solution for your technology needs.",
+    whytitle: "Why Choose Gliggo for Software Development Services?",
 
-// export const softwareDevelopment = {
-//   title: "Software Development",
-//   description:
-//     "At Gliggo, we are a leader in software development, boasting a dedicated team of skilled and experienced software professionals who strive to deliver the perfect solution for your technology needs.",
-//   whytitle: "Why Choose Gliggo for Software Development Services?",
+    whyChoose: [
+      {
+        title: "Expert Team",
+        description:
+          "Our team consists of highly skilled software developers, designers, and project managers with extensive experience across various technologies and industries.",
+      },
+      {
+        title: "Custom Solutions",
+        description:
+          "We understand that every business is unique. That’s why we offer custom software development services tailored to your specific requirements.",
+      },
+      {
+        title: "Agile Development",
+        description:
+          "We employ agile development methodologies to ensure flexibility, transparency, and rapid delivery.",
+      },
+      {
+        title: "Cutting-Edge Technologies",
+        description:
+          "We leverage the latest technologies and frameworks to develop robust and scalable software solutions.",
+      },
+      {
+        title: "Quality Assurance",
+        description:
+          "Our rigorous testing and quality assurance processes ensure that the software we deliver is reliable, secure, and performs flawlessly.",
+      },
+      {
+        title: "Post-Deployment Support",
+        description:
+          "Our commitment to your success doesn’t end with deployment. We offer comprehensive post-deployment support and maintenance.",
+      },
+    ],
+    service_title: "Our Software Development Services Include:",
+    services: [
+      {
+        title: "Custom Software Development",
+        description:
+          "Tailored software solutions, Enterprise applications, Cloud-based applications",
+        tags: ["Custom Software", "Enterprise Applications", "Cloud Solutions"],
+        path: `/software/custome_software.jpg`,
+      },
+      {
+        title: "Mobile App Development",
+        description:
+          "iOS and Android app development, Cross-platform app development, App maintenance and support",
+        tags: ["Mobile App", "Cross-platform", "App Maintenance"],
+        path: `/software/mobile_app.jpg`,
+      },
+      {
+        title: "Web Development",
+        description:
+          "Responsive web design, E-commerce solutions, Content management systems (CMS)",
+        tags: ["Web Development", "E-commerce", "CMS"],
+        path: `/software/web_development.jpg`,
+      },
+      {
+        title: "Software Integration",
+        description:
+          "API integration, Third-party service integration, Data migration and synchronization",
+        tags: ["API Integration", "Third-party Integration", "Data Migration"],
+        path: `/software/integration.jpg`,
+      },
+      {
+        title: "Software Testing and QA",
+        description:
+          "Functional testing, Performance testing, Security testing",
+        tags: ["Testing", "Quality Assurance", "Security"],
+        path: `/software/testing.jpg`,
+      },
+      {
+        title: "UI/UX Design",
+        description:
+          "User research and analysis, Wireframing and prototyping, Visual design and branding",
+        tags: ["UI Design", "UX Design", "Branding"],
+        path: `/software/ui_ux.jpg`,
+      },
+    ],
+    testimonials: reviews,
 
-//   whyChoose: [
-//     {
-//       title: "Expert Team",
-//       description:
-//         "Our team consists of highly skilled software developers, designers, and project managers with extensive experience across various technologies and industries.",
-//     },
-//     {
-//       title: "Custom Solutions",
-//       description:
-//         "We understand that every business is unique. That’s why we offer custom software development services tailored to your specific requirements.",
-//     },
-//     {
-//       title: "Agile Development",
-//       description:
-//         "We employ agile development methodologies to ensure flexibility, transparency, and rapid delivery.",
-//     },
-//     {
-//       title: "Cutting-Edge Technologies",
-//       description:
-//         "We leverage the latest technologies and frameworks to develop robust and scalable software solutions.",
-//     },
-//     {
-//       title: "Quality Assurance",
-//       description:
-//         "Our rigorous testing and quality assurance processes ensure that the software we deliver is reliable, secure, and performs flawlessly.",
-//     },
-//     {
-//       title: "Post-Deployment Support",
-//       description:
-//         "Our commitment to your success doesn’t end with deployment. We offer comprehensive post-deployment support and maintenance.",
-//     },
-//   ],
-//   service_title: "Our Software Development Services Include:",
-//   services: [
-//     {
-//       title: "Custom Software Development",
-//       description:
-//         "Tailored software solutions, Enterprise applications, Cloud-based applications",
-//       tags: ["Custom Software", "Enterprise Applications", "Cloud Solutions"],
-//       path: `software/custome_software.jpg`,
-//     },
-//     {
-//       title: "Mobile App Development",
-//       description:
-//         "iOS and Android app development, Cross-platform app development, App maintenance and support",
-//       tags: ["Mobile App", "Cross-platform", "App Maintenance"],
-//       path: `software/mobile_app.jpg`,
-//     },
-//     {
-//       title: "Web Development",
-//       description:
-//         "Responsive web design, E-commerce solutions, Content management systems (CMS)",
-//       tags: ["Web Development", "E-commerce", "CMS"],
-//       path: `software/web_development.jpg`,
-//     },
-//     {
-//       title: "Software Integration",
-//       description:
-//         "API integration, Third-party service integration, Data migration and synchronization",
-//       tags: ["API Integration", "Third-party Integration", "Data Migration"],
-//       path: `software/integration.jpg`,
-//     },
-//     {
-//       title: "Software Testing and QA",
-//       description: "Functional testing, Performance testing, Security testing",
-//       tags: ["Testing", "Quality Assurance", "Security"],
-//       path: `software/testing.jpg`,
-//     },
-//     {
-//       title: "UI/UX Design",
-//       description:
-//         "User research and analysis, Wireframing and prototyping, Visual design and branding",
-//       tags: ["UI Design", "UX Design", "Branding"],
-//       path: `software/ui_ux.jpg`,
-//     },
-//   ],
-//   testimonials: reviews,
+    callToAction:
+      "Ready to take your business to the next level with Gliggo's software development services? Schedule a free consultation with our experts today. We’ll assess your needs and create a customized software development plan that delivers results.",
+    contact: contactInfo,
+  },
 
-//   callToAction:
-//     "Ready to take your business to the next level with Gliggo's software development services? Schedule a free consultation with our experts today. We’ll assess your needs and create a customized software development plan that delivers results.",
-//   contact: contactInfo,
-// };
-
-// export const cloudSolutions = {
-//   title: "Cloud-Based Solutions",
-//   description:
-//     "At Gliggo, we provide comprehensive cloud-based solutions tailored to suit your business needs. Whether you’re looking to build a customer relationship management (CRM) system or enhance your online shopping experience, we've got you covered.",
-//   whytitle: "Why Choose Gliggo for Cloud-Based Solutions Services?",
-//   whyChoose: [
-//     {
-//       title: "Tailored Solutions",
-//       description:
-//         "We understand that each business has unique requirements. Our cloud-based solutions are customized to meet your specific needs.",
-//     },
-//     {
-//       title: "Scalability",
-//       description:
-//         "Our cloud solutions are designed to grow with your business. Whether you're a small startup or a large enterprise, our services can scale seamlessly.",
-//     },
-//     {
-//       title: "Cost Efficiency",
-//       description:
-//         "Cloud solutions can significantly reduce your IT costs by eliminating the need for expensive hardware and maintenance.",
-//     },
-//     {
-//       title: "Security and Compliance",
-//       description:
-//         "We prioritize the security of your data. Our cloud solutions adhere to the highest security standards and compliance requirements.",
-//     },
-//     {
-//       title: "Expert Support",
-//       description:
-//         "Our team of cloud experts is here to support you every step of the way. From planning and implementation to ongoing management and optimization.",
-//     },
-//   ],
-//   service_title: "Our Software Development Services Include:",
-//   services: [
-//     {
-//       title: "Cloud Migration",
-//       description:
-//         "Seamless transition to the cloud, Data migration and integration, Legacy system modernization",
-//       tags: ["Cloud Migration", "Data Integration", "Legacy System"],
-//       path: `cloud/migration.jpg`,
-//     },
-//     {
-//       title: "Cloud Infrastructure",
-//       description:
-//         "Infrastructure as a Service (IaaS), Platform as a Service (PaaS), Managed cloud services",
-//       tags: ["IaaS", "PaaS", "Managed Services"],
-//       path: `cloud/cloud.jpg`,
-//     },
-//     {
-//       title: "Software as a Service (SaaS)",
-//       description:
-//         "Custom SaaS application development, SaaS integration and management, Multi-tenant architecture",
-//       tags: ["SaaS Development", "Integration", "Multi-tenancy"],
-//       path: `cloud/saas.jpg`,
-//     },
-//     {
-//       title: "Customer Relationship Management (CRM)",
-//       description:
-//         "Cloud-based CRM solutions, Custom CRM development, CRM integration and support",
-//       tags: ["CRM Solutions", "Custom CRM", "Integration"],
-//       path: `cloud/crm.jpg`,
-//     },
-//     {
-//       title: "E-commerce Solutions",
-//       description:
-//         "Cloud-based e-commerce platforms, Scalable online shopping experiences, Integration with payment gateways and third-party services",
-//       tags: ["E-commerce Platforms", "Payment Integration"],
-//       path: `cloud/e_commerce.jpg`,
-//     },
-//     {
-//       title: "Cloud Security",
-//       description:
-//         "Comprehensive cloud security solutions, Data encryption and access control, Compliance and risk management",
-//       tags: ["Cloud Security", "Data Encryption", "Compliance"],
-//       path: `cloud/security.jpg`,
-//     },
-//     {
-//       title: "Cloud Backup and Disaster Recovery",
-//       description:
-//         "Automated cloud backups, Disaster recovery planning and implementation, Business continuity solutions",
-//       tags: ["Backup Solutions", "Disaster Recovery"],
-//       path: `cloud/backup.jpg`,
-//     },
-//   ],
-//   testimonials: reviews,
-// };
+  {
+    title: "Cloud-Based Solutions",
+    slug: "cloud_solutions",
+    description:
+      "At Gliggo, we provide comprehensive cloud-based solutions tailored to suit your business needs. Whether you’re looking to build a customer relationship management (CRM) system or enhance your online shopping experience, we've got you covered.",
+    whytitle: "Why Choose Gliggo for Cloud-Based Solutions Services?",
+    whyChoose: [
+      {
+        title: "Tailored Solutions",
+        description:
+          "We understand that each business has unique requirements. Our cloud-based solutions are customized to meet your specific needs.",
+      },
+      {
+        title: "Scalability",
+        description:
+          "Our cloud solutions are designed to grow with your business. Whether you're a small startup or a large enterprise, our services can scale seamlessly.",
+      },
+      {
+        title: "Cost Efficiency",
+        description:
+          "Cloud solutions can significantly reduce your IT costs by eliminating the need for expensive hardware and maintenance.",
+      },
+      {
+        title: "Security and Compliance",
+        description:
+          "We prioritize the security of your data. Our cloud solutions adhere to the highest security standards and compliance requirements.",
+      },
+      {
+        title: "Expert Support",
+        description:
+          "Our team of cloud experts is here to support you every step of the way. From planning and implementation to ongoing management and optimization.",
+      },
+    ],
+    service_title: "Our Software Development Services Include:",
+    services: [
+      {
+        title: "Cloud Migration",
+        description:
+          "Seamless transition to the cloud, Data migration and integration, Legacy system modernization",
+        tags: ["Cloud Migration", "Data Integration", "Legacy System"],
+        path: `/cloud/migration.jpg`,
+      },
+      {
+        title: "Cloud Infrastructure",
+        description:
+          "Infrastructure as a Service (IaaS), Platform as a Service (PaaS), Managed cloud services",
+        tags: ["IaaS", "PaaS", "Managed Services"],
+        path: `/cloud/cloud.jpg`,
+      },
+      {
+        title: "Software as a Service (SaaS)",
+        description:
+          "Custom SaaS application development, SaaS integration and management, Multi-tenant architecture",
+        tags: ["SaaS Development", "Integration", "Multi-tenancy"],
+        path: `/cloud/saas.jpg`,
+      },
+      {
+        title: "Customer Relationship Management (CRM)",
+        description:
+          "Cloud-based CRM solutions, Custom CRM development, CRM integration and support",
+        tags: ["CRM Solutions", "Custom CRM", "Integration"],
+        path: `/cloud/crm.jpg`,
+      },
+      {
+        title: "E-commerce Solutions",
+        description:
+          "Cloud-based e-commerce platforms, Scalable online shopping experiences, Integration with payment gateways and third-party services",
+        tags: ["E-commerce Platforms", "Payment Integration"],
+        path: `/cloud/e_commerce.jpg`,
+      },
+      {
+        title: "Cloud Security",
+        description:
+          "Comprehensive cloud security solutions, Data encryption and access control, Compliance and risk management",
+        tags: ["Cloud Security", "Data Encryption", "Compliance"],
+        path: `/cloud/security.jpg`,
+      },
+      {
+        title: "Cloud Backup and Disaster Recovery",
+        description:
+          "Automated cloud backups, Disaster recovery planning and implementation, Business continuity solutions",
+        tags: ["Backup Solutions", "Disaster Recovery"],
+        path: `/cloud/backup.jpg`,
+      },
+    ],
+    testimonials: reviews,
+  },
+];
 
 export const words = [
   "Altitudes",
@@ -722,3 +730,17 @@ export const ourproject_words = [
   "Our Work",
   "Our Achievements",
 ];
+export const middlewareFunctionsEndpointStub =
+  "https://gliggo-site-middleware.azurewebsites.net/api/";
+export const webInfo = {
+  url:
+    "http://localhost:3001" ||
+    "https://gliggo.com" ||
+    "https://www.gliggo.com" ||
+    "https://kind-bush-09c53f90f.5.azurestaticapps.net/", //TODO manage this in an .env
+  company_name: "Gliggo Technologies India Private Limited",
+  contactFunctionsEndpoint: `${middlewareFunctionsEndpointStub}httpTriggerContactGliggo`,
+  // contactFunctionsEndpoint: "https://gliggocontactfunction.azurewebsites.net/api/httpTriggerContactGliggo",
+  collectNewsletterSubscribersEndpoint: `${middlewareFunctionsEndpointStub}storeSubscriberEmail`,
+  //TODO make one to accept job applications
+};

@@ -60,7 +60,7 @@ const Slide3 = () => {
             </p>
             {/* Button for Data Advisory */}
             <div className="flex justify-start items-center px-3">
-              <Link href={"/cloud"}
+              <Link href={"/cloud_solutions"}
                 className=" px-4 py-2 mb-5 bg-black text-customGreen shadow-light_shadow hover: rounded-tr-full rounded-br-full rounded-tl-full hover:bg-gradient-to-tr from-[#2CAC68]  to-green-700 hover:text-black font-Questrial"
                
               >
