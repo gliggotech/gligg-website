@@ -10,6 +10,14 @@ export default async function newsletterFunction(req) {
   try {
     // Check if email already exists in the database
     const existing_subscription = await subscribe.findOne({ email });
+    // Check if subscription
+    if (existing_subscription) {
+     return {
+       success: false,
+       message: "Email already subscribed",
+     }
+    } 
+
     if (existing_subscription && existing_subscription.subscribed) {
       return {
         success: false,
