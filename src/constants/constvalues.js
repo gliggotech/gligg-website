@@ -32,11 +32,11 @@ export const navlinks = [
     name: "Contact",
     url: "/contact",
   },
-  {
-    id: 7,
-    name: "Gliggo Investments",
-    url: "/gliggo-investments", //TODO http://gliggoinvestments.com
-  },
+  // {
+  //   id: 7,
+  //   name: "Gliggo Investments",
+  //   url: "/gliggo-investments", //TODO http://gliggoinvestments.com
+  // },
 ];
 export const invalidRoutes = ["/gliggoinvestments.com"];
 // Contact information

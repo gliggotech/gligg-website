@@ -139,14 +139,14 @@ export const Navbar = () => {
         >
           <div className="flex justify-end p-4">
             {/* Cross icon to close the mobile navbar */}
-            {/* <RxCross2
+            <RxCross2
               className="w-8 h-8 cursor-pointer text-white"
               onClick={handleNavbar}
-            /> */}
+            />
           </div>
           <div className="flex flex-col h-full justify-start  items-center gap-y-6">
             {/* Navigation links for mobile view */}
-            {/* <ul className="flex flex-col gap-y-10 justify-center items-center font-Questrial">
+            <ul className="flex flex-col gap-y-10 justify-center items-center font-Questrial">
             {navlinks.map((value) => (
                 <li key={value.id}>
                   <div className="relative text-[20px]">
@@ -181,9 +181,9 @@ export const Navbar = () => {
                   </div>
                 </li>
               ))}
-            </ul> */}
+            </ul>
             {/* Social media links for mobile view */}
-            {/* <ul className="flex gap-x-7  items-center p-4">
+            <ul className="flex gap-x-7  items-center p-4">
               {socialLinks.map((value) => (
                 <li key={value.id}>
                   <div className="">
@@ -197,7 +197,7 @@ export const Navbar = () => {
                   </div>
                 </li>
               ))}
-            </ul> */}
+            </ul>
           </div>
         </motion.div>
       )}
