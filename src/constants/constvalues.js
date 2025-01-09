@@ -1,5 +1,3 @@
-
-
 // Navigation links
 export const navlinks = [
   {
@@ -144,6 +142,14 @@ export const our_team = [
       "A results-driven and goal-oriented Business Development Manager, Abdul Rahim has over 20 years of experience in customer relationship and sales management in various sectors and in diverse settings in United Arab Emirates, Qatar, and Oman, demonstrating exceptional leadership skills.",
   },
   {
+    id: 5,
+    imageUrl: "/femaleavatar.jpg",
+    name: "Aakifa Siddiqua",
+    position: "Accountant (Data Entry)",
+    content:
+      "Aakifa Siddiqua graduated with a Masters Degree in Business Administration. She is a dedicated Accounting Data Entry Executive who meticulously handles the entry, verification, and maintenance of data of our clients across various platforms and systems. With precision and dedication towards her work, Aakifa proves to be a reliable asset to the team.",
+  },
+  {
     id: 3,
     imageUrl: "/man_avatar.jpg",
     name: "Vijayakumar",
@@ -159,14 +165,7 @@ export const our_team = [
     content:
       "Mohammed is a detail-oriented accountant with a strong foundation in accounting principles and practices. He is dedicated to ensuring accurate financial records and providing support in financial analysis. With his analytical skills and attention to detail, Mohammed plays a crucial role in maintaining the financial health of the organization.",
   },
-  {
-    id: 5,
-    imageUrl: "/femaleavatar.jpg",
-    name: "Aakifa Siddiqua",
-    position: "Accountant (Data Entry)",
-    content:
-      "Aakifa Siddiqua graduated with a Masters Degree in Business Administration. She is a dedicated Accounting Data Entry Executive who meticulously handles the entry, verification, and maintenance of data of our clients across various platforms and systems. With precision and dedication towards her work, Aakifa proves to be a reliable asset to the team.",
-  },
+
   {
     id: 6,
     imageUrl: "/man_avatar2.jpg",
