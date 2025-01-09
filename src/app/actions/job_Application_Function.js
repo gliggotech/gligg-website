@@ -1,67 +1,113 @@
 "use server";
 
 import { render } from "@react-email/render";
-import transporter from "@/utils/transporter";
+
 import JobApplicationEmail from "@/components/email templates/JobApplicationEmail";
+import { gettingAccessToken } from "@/utils/token_generation";
+import { mailsendfunction } from "@/utils/mailsendfunction";
 
 export async function job_apply(formData) {
-  // Create transporter
-
-  // Extract form fields
-  const first_name = formData.get("first_name");
-  const last_name = formData.get("last_name");
-  const email = formData.get("email");
-  const university = formData.get("university");
-  const expertise = formData.get("expertise");
-  const githubLink = formData.get("githublink");
-  const linkedinLink = formData.get("linkedinlink");
-  const resume = formData.get("resume");
-
-  // Render email HTML
-  const emailHtml = await render(
-    JobApplicationEmail({
-      first_name,
-      last_name,
-      email,
-      university,
-      expertise,
-      githubLink,
-      linkedinLink,
-      resumeFileName: resume.name,
-    })
-  );
-
-  // Prepare mail options
-  const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: process.env.ADMIN_EMAIL,
-    subject: `Job Application - ${first_name} ${last_name}`,
-    html: emailHtml,
-    attachments: [],
-  };
-
-  // Handle resume attachment
-  if (resume && resume.size > 0) {
-    mailOptions.attachments.push({
-      filename: resume.name,
-      content: Buffer.from(await resume.arrayBuffer()),
-      contentType: resume.type,
-    });
-  }
-
   try {
-    // Send email
-    await transporter.sendMail(mailOptions);
+    // Extract form data
+    const first_name = formData.get("first_name");
+    const last_name = formData.get("last_name");
+    const email = formData.get("email");
+    const university = formData.get("university");
+    const expertise = formData.get("expertise");
+    const githubLink = formData.get("githublink");
+    const linkedinLink = formData.get("linkedinlink");
+    const resume = formData.get("resume");
 
-    return {
-      success: true,
-      message: "Application submitted successfully",
+    // Validate required fields
+    if (!first_name || !last_name || !email || !resume) {
+      return {
+        success: false,
+        message: "Missing required fields",
+      };
+    }
+
+    // Render email HTML
+    const emailHtml = await render(
+      JobApplicationEmail({
+        first_name,
+        last_name,
+        email,
+        university,
+        expertise,
+        githubLink,
+        linkedinLink,
+        resumeFileName: resume.name,
+      })
+    );
+
+    // Get access token
+    const tokenResponse = await gettingAccessToken({
+      ClientId: process.env.CLIENT_ID,
+      ClientSecret: process.env.CLIENT_SECRET,
+      TenantID: process.env.TENANT_ID,
+    });
+
+    // Check token acquisition
+    if (
+      !tokenResponse ||
+      !tokenResponse.message ||
+      !tokenResponse.message.access_token
+    ) {
+      return {
+        success: false,
+        message: "Failed to obtain access token",
+      };
+    }
+
+    const accessToken = tokenResponse.message.access_token;
+
+    // Prepare email payload for Microsoft Graph API
+    const emailPayload = {
+      message: {
+        subject: "New Job Application Submission",
+        body: {
+          contentType: "HTML",
+          content: emailHtml,
+        },
+        toRecipients: [
+          {
+            emailAddress: {
+              address: process.env.ADMIN_EMAIL,
+            },
+          },
+        ],
+        attachments: [
+          {
+            "@odata.type": "#microsoft.graph.fileAttachment",
+            name: resume.name,
+            contentType: resume.type,
+            contentBytes: await resume
+              .arrayBuffer()
+              .then((buffer) => Buffer.from(buffer).toString("base64")),
+          },
+        ],
+      },
+      saveToSentItems: false,
     };
+
+    // Send email via Microsoft Graph API
+    const graphResponse = await mailsendfunction(emailPayload, accessToken);
+    if (graphResponse.status === 200) {
+      return {
+        success: true,
+        message: "Application submitted successfully",
+      };
+    } else {
+      return {
+        success: false,
+        message: graphResponse.message,
+      };
+    }
   } catch (error) {
-   
+    console.error("Job application submission error:", error);
     return {
       success: false,
-      message: "Failed to submit application",
+      message: error.message || "Failed to submit application",
     };
   }
 }

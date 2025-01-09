@@ -1,43 +1,66 @@
+// app/actions/contact.js
 "use server";
 
 import ContactFormEmail from "@/components/email templates/ContactFormEmail";
-import transporter from "@/utils/transporter";
+import { mailsendfunction } from "@/utils/mailsendfunction";
+import { gettingAccessToken } from "@/utils/token_generation";
+
 import { render } from "@react-email/components";
 
 export async function contactFunction(data) {
-  const { first_name, last_name, email, message } = data;
-
-  const emailHtml = await render(
-    ContactFormEmail({
-      first_name: first_name,
-      last_name: last_name,
-      email: email,
-      message: message,
-    })
-  );
-
-  const mailOptions = {
-    from: process.env.EMAIL_USER,
-    to: process.env.ADMIN_EMAIL,
-    subject: `New Contact Form Submission from ${first_name} ${last_name}`,
-    html: emailHtml,
-  };
-
   try {
-    // Use sendMail as a Promise
-    const info = await transporter.sendMail(mailOptions);
-    if (!info) {
-      throw new Error(
-        "An error occurred. Sorry for the inconvenience. Please try again."
-      ); 
-    }
+    const { first_name, last_name, email, message } = data;
 
-    return {
-      success: true,
-      message:
-        "Thank you for contacting Gliggo Inc. You are important to us. A member of our team will get back to you shortly.",
+    const token = await gettingAccessToken({
+      ClientId: process.env.CLIENT_ID,
+      ClientSecret: process.env.CLIENT_SECRET,
+      TenantID: process.env.TENANT_ID,
+    });
+    const accessToken = token.message.access_token;
+
+    const emailHtml = await render(
+      ContactFormEmail({
+        first_name,
+        last_name,
+        email,
+        message,
+      })
+    );
+
+    const emailPayload = {
+      message: {
+        subject: "New Contact Form Submission",
+        body: {
+          contentType: "HTML",
+          content: emailHtml,
+        },
+        toRecipients: [
+          {
+            emailAddress: {
+              address: process.env.ADMIN_EMAIL,
+            },
+          },
+        ],
+      },
+      saveToSentItems: false,
     };
+    const response = await mailsendfunction(emailPayload, accessToken);
+    if (response.status === 200) {
+      return {
+        status: 200,
+        message:
+          "We received your message successfully. Our team will get back to you soon.",
+        success: true,
+      };
+    } else {
+      return {
+        status: 500,
+        message: response.message,
+        success: false,
+      };
+    }
   } catch (error) {
+    console.error("Email error:", error);
     return {
       success: false,
       message:

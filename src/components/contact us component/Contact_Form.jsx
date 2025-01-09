@@ -4,7 +4,6 @@ import { useRequest } from "@/custom hooks/useRequest";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 
-
 const Contact_Form = () => {
   // State variables
   const {
@@ -15,19 +14,20 @@ const Contact_Form = () => {
   } = useForm();
   const [modalVisible, setModalVisible] = useState(false);
 
-  const { loading, success, error, sendRequest,setSuccess, setError } = useRequest();
+  const { loading, success, error, sendRequest, setSuccess, setError } =
+    useRequest();
   useEffect(() => {
     // Scroll to the top of the page on component mount or navigation
     window.scrollTo(0, 0);
   }, []);
 
-
-
   // Function to handle form submission
   const handlesubmit = async (data) => {
     const result = await sendRequest(() => contactFunction(data));
+    console.log(result);
 
-    if(result.success) setModalVisible(true);
+    if (result.success) setModalVisible(true);
+    if (result.error) setError(result.message);
   };
 
   // Function to handle modal confirmation
@@ -171,7 +171,7 @@ const Contact_Form = () => {
 
             <Recaptcha ref={ref} />
             </div> */}
-        
+
             {/* Submit Button */}
             <button
               type="submit"
@@ -185,6 +185,9 @@ const Contact_Form = () => {
                 "Contact Us"
               )}
             </button>
+            {error && (
+              <div className="text-red-500 font-bold mt-2">{error}</div>
+            )}
           </form>
         </div>
       </div>
