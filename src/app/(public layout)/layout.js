@@ -29,6 +29,14 @@ export const metadata = {
   title: {
     default: `${webInfo.company_name}`,
     template: `%s | ${webInfo.company_name}`,
+    keywords: [
+      `${webInfo.company_name}`,
+      "gliggo technology",
+      "gliggo technology home page",
+      "gliggo technologies india pvt ltd",
+      "gliggo anna nagar",
+      "gliggo",
+    ],
   },
   description:
     "Taking Your Business to New Heights. Gliggo Technologies India Private Limited offers top-notch IT solutions including BPO, Software Development, and Cloud-based Services.",
