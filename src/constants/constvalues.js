@@ -340,54 +340,54 @@ export const projects = [
 ];
 // Job openings and career opportunities
 export const careers = [
+  // {
+  //   id: 1,
+  //   title: "Python Developer (AI, Automation, Machine Learning)",
+  //   responsibilities: [
+  //     " Develop, test, and maintain robust, scalable, high-quality software solutions with a focus on AI, automation, and machine learning.",
+
+  //     "Implement machine learning algorithms and techniques.",
+
+  //     "Automate data collection, preprocessing, and analysis tasks.",
+
+  //     "Collaborate with data scientists to build predictive models and fine-tune existing algorithms.",
+
+  //     "Write reusable, testable, and efficient code.",
+
+  //     "Review and debug existing source code for issues and inefficiencies.",
+
+  //     "Document software for technical users and end-users.",
+
+  //     "Stay current with industry trends and developments in AI and machine learning.",
+  //   ],
+  //   requirements: [
+  //     "Bachelor's, Master's degree or PhD. in Computer Science, Engineering, Mathematics, or a closely-related field.",
+
+  //     "Proven experience in Python scripting.",
+
+  //     "Knowledge of AI and machine learning principles, and familiarity with libraries and frameworks such as TensorFlow, PyTorch, or Scikit-learn.",
+
+  //     "Experience with automation tools and techniques.",
+
+  //     "Strong problem-solving skills and ability to think algorithmically.",
+
+  //     "Proficiency in SQL, NoSQL and experience with other databases.",
+
+  //     "Familiarity with Agile development methodologies.",
+
+  //     "Excellent communication and teamwork skills.",
+
+  //     "Experience with HuggingFace, PyTorch, Tensorflow, AutoGPT, etc.",
+  //   ],
+  //   nice_to_have:
+  //     " Master's or PhD in Machine-Learning, Data Science or another closely-related discipline.",
+  //   location: "Onsite/Hybrid",
+  //   field: "Development",
+  //   slug_url: "python-developer-(ai-automation-machine-learning)",
+  //   type_of_work: "Full-time",
+  // },
   {
     id: 1,
-    title: "Python Developer (AI, Automation, Machine Learning)",
-    responsibilities: [
-      " Develop, test, and maintain robust, scalable, high-quality software solutions with a focus on AI, automation, and machine learning.",
-
-      "Implement machine learning algorithms and techniques.",
-
-      "Automate data collection, preprocessing, and analysis tasks.",
-
-      "Collaborate with data scientists to build predictive models and fine-tune existing algorithms.",
-
-      "Write reusable, testable, and efficient code.",
-
-      "Review and debug existing source code for issues and inefficiencies.",
-
-      "Document software for technical users and end-users.",
-
-      "Stay current with industry trends and developments in AI and machine learning.",
-    ],
-    requirements: [
-      "Bachelor's, Master's degree or PhD. in Computer Science, Engineering, Mathematics, or a closely-related field.",
-
-      "Proven experience in Python scripting.",
-
-      "Knowledge of AI and machine learning principles, and familiarity with libraries and frameworks such as TensorFlow, PyTorch, or Scikit-learn.",
-
-      "Experience with automation tools and techniques.",
-
-      "Strong problem-solving skills and ability to think algorithmically.",
-
-      "Proficiency in SQL, NoSQL and experience with other databases.",
-
-      "Familiarity with Agile development methodologies.",
-
-      "Excellent communication and teamwork skills.",
-
-      "Experience with HuggingFace, PyTorch, Tensorflow, AutoGPT, etc.",
-    ],
-    nice_to_have:
-      " Master's or PhD in Machine-Learning, Data Science or another closely-related discipline.",
-    location: "Onsite/Hybrid",
-    field: "Development",
-    slug_url: "python-developer-(ai-automation-machine-learning)",
-    type_of_work: "Full-time",
-  },
-  {
-    id: 2,
     title: "Chartered Accountant",
     responsibilities: [
       "The position is reporting to Sr. Audit manager and partner. The candidate is required to execute the audit of client files as per the audit programs and procedures and complete the audit under tight deadlines.",
