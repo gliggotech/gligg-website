@@ -141,14 +141,7 @@ export const our_team = [
     content:
       "A results-driven and goal-oriented Business Development Manager, Abdul Rahim has over 20 years of experience in customer relationship and sales management in various sectors and in diverse settings in United Arab Emirates, Qatar, and Oman, demonstrating exceptional leadership skills.",
   },
-  {
-    id: 5,
-    imageUrl: "/femaleavatar.jpg",
-    name: "Aakifa Siddiqua",
-    position: "Accountant (Data Entry)",
-    content:
-      "Aakifa Siddiqua graduated with a Masters Degree in Business Administration. She is a dedicated Accounting Data Entry Executive who meticulously handles the entry, verification, and maintenance of data of our clients across various platforms and systems. With precision and dedication towards her work, Aakifa proves to be a reliable asset to the team.",
-  },
+
   {
     id: 3,
     imageUrl: "/man_avatar.jpg",
@@ -173,6 +166,14 @@ export const our_team = [
     position: "Accountant",
     content:
       "Muruganantham consistently displayed excellent problem-solving abilities, attention to detail, and effective communication skills, making significant contributions to the team's success. Their knowledge of accounting principles and software proficiency has been an asset to our organization.",
+  },
+  {
+    id: 5,
+    imageUrl: "/man_avatar3.jpg",
+    name: "Mohammed Faizal",
+    position: "Accounting And Data entry",
+    content:
+      "Skilled in data entry and accounting, ensuring accuracy in financial records and transactions. Proficient in bookkeeping, reporting, and financial management with strong attention to detail. Experienced in maintaining financial databases, verifying data integrity, preparing invoices, and assisting with budget tracking. ",
   },
 ];
 // Strengths of the company
