@@ -435,7 +435,9 @@ export const careers = [
       "Immediate Joining",
       "Candidates from Year 2019 and above passed outs only apply.",
     ],
-    nice_to_have: "Microsoft Excel,English,Accounting,IFRS,US GAAP",
+    // nice_to_have: "Microsoft Excel,English,Accounting,IFRS,US GAAP",
+    nice_to_have:
+      "Proficiency in Microsoft Excel, strong English language skills, solid understanding of accounting principles, familiarity with IFRS and US GAAP",
     location: "Onsite,Chennai",
     field: "Accounting",
     type_of_work: "Full-time",
