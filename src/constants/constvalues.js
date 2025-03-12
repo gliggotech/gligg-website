@@ -339,7 +339,8 @@ export const projects = [
   //   imageUrl: drahmedmian, //TODO these images need to be referenced better, especially once the wix site comes down
   // },
 ];
-// Job openings and career opportunities
+
+// Job openings and career opportunities.
 export const careers = [
   // {
   //   id: 1,
@@ -408,6 +409,37 @@ export const careers = [
     field: "Accounting",
     type_of_work: "Full-time",
     slug_url: "chartered-accountant",
+  },
+
+  {
+    id: 2,
+    title: " Data Entry (Accounting)",
+    description:
+      "We are seeking a motivated and detail-oriented Data Entry and Accounts executive to join our team with min 1-2 yrs of experience in Data entry and accounts to update and enter given data and accounts information on our company databases and computer systems. Our ideal candidate has essential Accounts knowledge, data entry skills, like fast typing with an eye for detail and familiarity with spreadsheets, data entry and accounting software. Previous experience as a Data Entry executive or accounts executive position will be considered an advantage.",
+    responsibilities: [
+      " Insert company and customer data by inputting text based and numerical information from source documents within time limits.",
+      "Compile, verify accuracy and sort information according to priorities to prepare source data for computer entry.",
+      "Review data for deficiencies or errors, correct any incompatibilities if possible and check output.",
+      "Research and obtain further information for incomplete documents.",
+      "Generate reports, store completed work in designated locations and perform backup operations.",
+      "Keep information confidential.",
+      "Comply with data integrity and security policies.",
+    ],
+    requirements: [
+      "Required Male Candidate with Bachelor's degree in B.Com, BBA or a related field only, passed out in 2019 and above.",
+      "Proven data entry work experience, as a Data Entry and Accounts executive.",
+      "Experience with MS Office, data programs and Accounts related software's.",
+      "Proficiency in English",
+      "Attention to detail, organization skills, with an ability to stay focused on assigned tasks.",
+      "Additional computer training, Tally or related certification will be an asset.",
+      "Immediate Joining",
+      "Candidates from Year 2019 and above passed outs only apply.",
+    ],
+    nice_to_have: "Microsoft Excel,English,Accounting,IFRS,US GAAP",
+    location: "Onsite,Chennai",
+    field: "Accounting",
+    type_of_work: "Full-time",
+    slug_url: "data-entry-(accounting)",
   },
 ];
 

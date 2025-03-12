@@ -43,6 +43,15 @@ const EachCareer = ({ job }) => {
               </div>
             </div>
           </div>
+          {job.description && (
+            <div>
+              <h1 className="text-2xl text-left text-customGreen px-2">
+                <Text_Animation str="Job Description :" />{" "}
+              </h1>
+              <p className="text-left px-2">{job.description}</p>
+            </div>
+          )}
+
           {/* Displaying job responsibilities with text animation */}
           <h1 className="text-2xl text-left text-customGreen px-2">
             <Text_Animation str="Responsibilities :" />{" "}
