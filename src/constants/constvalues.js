@@ -389,29 +389,6 @@ export const careers = [
   //   type_of_work: "Full-time",
   // },
   {
-    id: 1,
-    title: "Chartered Accountant",
-    responsibilities: [
-      "The position is reporting to Sr. Audit manager and partner. The candidate is required to execute the audit of client files as per the audit programs and procedures and complete the audit under tight deadlines.",
-    ],
-    requirements: [
-      "A qualified Chartered Accountant from ICAI with a minimum of 4 years' experience post designation in execution of small to medium-sized companies' external audits.",
-      "Strong knowledge of IFRS and USGAAP is required.",
-      "Strong knowledge in Auditing standards is required.",
-      "Experience with audit software like caseware, datasnipper etc is preferred.",
-      "Proficiency in Excel is a must.",
-      "Should be able to draft financial statements with notes to financial statements.",
-      "Should be able to work independently under minimum supervision.",
-      "This Job is based on both work from home and work from office from early evening to late night according to North American Hours.",
-    ],
-    nice_to_have: "Microsoft Excel,English,Accounting,IFRS,US GAAP",
-    location: "Onsite/Hybrid",
-    field: "Accounting",
-    type_of_work: "Full-time",
-    slug_url: "chartered-accountant",
-  },
-
-  {
     id: 2,
     title: " Data Entry (Accounting)",
     description:
@@ -437,11 +414,35 @@ export const careers = [
     ],
     // nice_to_have: "Microsoft Excel,English,Accounting,IFRS,US GAAP",
     nice_to_have:
-      "Proficiency in Microsoft Excel, strong English language skills, solid understanding of accounting principles, familiarity with IFRS and US GAAP",
-    location: "Onsite,Chennai",
-    field: "Accounting",
+      "Proficiency in Microsoft Excel, strong English language skills, solid understanding of accounting principles, Tally software",
+    location: "Onsite/Chennai",
+    field: "Accounts",
     type_of_work: "Full-time",
     slug_url: "data-entry-(accounting)",
+    show_Github: false,
+  },
+  {
+    id: 1,
+    title: "Chartered Accountant",
+    responsibilities: [
+      "The position is reporting to Sr. Audit manager and partner. The candidate is required to execute the audit of client files as per the audit programs and procedures and complete the audit under tight deadlines.",
+    ],
+    requirements: [
+      "A qualified Chartered Accountant from ICAI with a minimum of 4 years' experience post designation in execution of small to medium-sized companies' external audits.",
+      "Strong knowledge of IFRS and USGAAP is required.",
+      "Strong knowledge in Auditing standards is required.",
+      "Experience with audit software like caseware, datasnipper etc is preferred.",
+      "Proficiency in Excel is a must.",
+      "Should be able to draft financial statements with notes to financial statements.",
+      "Should be able to work independently under minimum supervision.",
+      "This Job is based on both work from home and work from office from early evening to late night according to North American Hours.",
+    ],
+    nice_to_have: "Microsoft Excel,English,Accounting,IFRS,US GAAP",
+    location: "Onsite/chennai",
+    field: "Accounts",
+    type_of_work: "Full-time",
+    slug_url: "chartered-accountant",
+    show_Github: false,
   },
 ];
 

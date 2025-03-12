@@ -1,9 +1,8 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
 import { CiLocationOn } from "react-icons/ci"; // Importing location icon
 import { IoMdTime } from "react-icons/io"; // Importing time icon
 import { BsPersonWorkspace } from "react-icons/bs";
-
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Text_Animation from "../Animations/Text_Animation";
@@ -11,16 +10,14 @@ import { careers } from "@/constants/constvalues";
 import Link from "next/link";
 
 const Careers = () => {
-  const viewMoreJobs = 'View more of our jobs on Indeed  ';
-  
+  const viewMoreJobs = "View more of our jobs on Indeed  ";
+
   useEffect(() => {
     // Scroll to the top of the page on component mount or navigation
     window.scrollTo(0, 0);
   }, []);
   return (
     <div className="  bg-customGray" id="careers">
- 
-
       {/* Section for main heading */}
       <section className="bg-black text-white sm:pt-9  md:pt-10 pt-9 text-center">
         <h1 className="text-4xl sm:text-6xl font-bold mb-3">
@@ -87,9 +84,9 @@ const Careers = () => {
 
             {/* Button to navigate to individual job page */}
             <div>
-              <Link href={`/careers/${career.slug_url}`}
+              <Link
+                href={`/careers/${career.slug_url}`}
                 className="bg-customGreen flex-1 hover:bg-customGray hover:text-black hover:border-2  text-black font-bold  p-3 mb-5 rounded-md"
-             
                 aria-label={`Read more about ${career.title}`}
               >
                 <Text_Animation str="Read More & Apply..." />
@@ -109,7 +106,7 @@ const Careers = () => {
             className="bg-customGreen hover:bg-white text-black font-bold  p-3 rounded-md max-w-sm "
           >
             <span>
-              <Text_Animation str={viewMoreJobs + '  '} />
+              <Text_Animation str={viewMoreJobs + "  "} />
               <FaExternalLinkAlt className="inline" />
             </span>
           </a>

@@ -79,7 +79,7 @@ const Application_Form = ({ job }) => {
               {/* First Name */}
               <div className="flex flex-col max-w-xl gap-y-2 mb-3">
                 <label htmlFor="first_name" className="text-white">
-                  First Name <span>*</span>
+                  First Name <span className="text-red-100">*</span>
                 </label>
                 <input
                   type="text"
@@ -134,17 +134,44 @@ const Application_Form = ({ job }) => {
                   <span className="text-red-700">{errors.email.message}</span>
                 )}
               </div>
+              {/* Contact Number */}
+              <div className="flex flex-col max-w-xl gap-y-2 mb-3">
+                <label htmlFor="contact_Number" className="text-white">
+                  Contact Number <span>*</span>
+                </label>
+                <input
+                  type="contact_Number"
+                  className="border-b-2 p-3 outline-none required bg-black"
+                  {...register("contact_Number", {
+                    required: "Contact Number is required",
+                    pattern: {
+                      value: /^[0-9]{10}$/,
+                      message: "Enter a valid Contact Number",
+                    },
+                  })}
+                />
+                {errors.contact_Number && (
+                  <span className="text-red-700">
+                    {errors.contact_Number.message}
+                  </span>
+                )}
+              </div>
 
               {/* Address */}
               <div className="flex flex-col max-w-xl gap-y-2 mb-3">
                 <label htmlFor="address" className="text-white">
-                  Address
+                  Address <span className="text-red-100">*</span>
                 </label>
                 <input
                   type="text"
                   className="border-b-2 p-3 outline-none required bg-black"
-                  {...register("address")}
+                  {...register("address", {
+                    required: "Address is required",
+                  })}
                 />
+                {errors.address && (
+                  <span className="text-red-700">{errors.address.message}</span>
+                )}
               </div>
             </div>
 
@@ -175,16 +202,21 @@ const Application_Form = ({ job }) => {
                   {...register("expertise")}
                 />
               </div>
-              <div className="flex flex-col max-w-xl gap-y-2 mb-3">
-                <label htmlFor="githublink" className="text-white">
-                  GitHub Profile Link
-                </label>
-                <input
-                  type="text"
-                  className="border-b-2 p-3 outline-none required bg-black"
-                  {...register("githublink")}
-                />
-              </div>
+              {job?.show_Github && (
+                <div>
+                  <div className="flex flex-col max-w-xl gap-y-2 mb-3">
+                    <label htmlFor="githublink" className="text-white">
+                      GitHub Profile Link
+                    </label>
+                    <input
+                      type="text"
+                      className="border-b-2 p-3 outline-none required bg-black"
+                      {...register("githublink")}
+                    />
+                  </div>
+                </div>
+              )}
+
               <div className="flex flex-col max-w-xl gap-y-2 mb-3">
                 <label htmlFor="linkedinlink" className="text-white">
                   LinkedIn Profile Link

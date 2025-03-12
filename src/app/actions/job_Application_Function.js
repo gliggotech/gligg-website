@@ -16,6 +16,8 @@ export async function job_apply(formData) {
     const expertise = formData.get("expertise");
     const githubLink = formData.get("githublink");
     const linkedinLink = formData.get("linkedinlink");
+    const contactNumber = formData.get("contact_Number");
+    const address = formData.get("address");
     const resume = formData.get("resume");
 
     // Validate required fields
@@ -37,6 +39,8 @@ export async function job_apply(formData) {
         githubLink,
         linkedinLink,
         resumeFileName: resume.name,
+        contactNumber,
+        address,
       })
     );
 
