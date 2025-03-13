@@ -328,66 +328,20 @@ export const projects = [
     webUrl: "https://www.taxqwik.com/", // "https://volthivetech.com/",
     imageUrl: "/fullstack.webp",
   },
-  // {
-  //   id: 5,
-  //   title: "WordPress Websites",
-  //   description:
-  //     "Custom WordPress website development services tailored to your business requirements. From responsive design to plugin integration, we create visually appealing and functional websites that drive results.",
-  //   summary:
-  //     "Enhance your online presence with our custom WordPress website development services. Perfect for busy professionals, such as doctors, and small businesses.",
-  //   webUrl: "https://www.drahmedmian.ca/",
-  //   imageUrl: drahmedmian, //TODO these images need to be referenced better, especially once the wix site comes down
-  // },
+  {
+    id: 5,
+    title: "B&I Electric Inc.",
+    description:
+      "Developed a responsive web application for B&I Electric showcasing their electrical services including custom home wiring, EV charger installation, panel upgrades, and troubleshooting. Built with React.js using component-based architecture, the application features intuitive navigation, optimized imagery, and accessible design that effectively communicates the company's expertise while enhancing lead generation.",
+    summary:
+      "A service catalog application combining technical excellence with effective UX design to showcase specialized electrical services and improve client engagement.",
+    webUrl: "https://www.bielectricinc.com/",
+    imageUrl: "/B&I.jpg",
+  },
 ];
 
 // Job openings and career opportunities.
 export const careers = [
-  // {
-  //   id: 1,
-  //   title: "Python Developer (AI, Automation, Machine Learning)",
-  //   responsibilities: [
-  //     " Develop, test, and maintain robust, scalable, high-quality software solutions with a focus on AI, automation, and machine learning.",
-
-  //     "Implement machine learning algorithms and techniques.",
-
-  //     "Automate data collection, preprocessing, and analysis tasks.",
-
-  //     "Collaborate with data scientists to build predictive models and fine-tune existing algorithms.",
-
-  //     "Write reusable, testable, and efficient code.",
-
-  //     "Review and debug existing source code for issues and inefficiencies.",
-
-  //     "Document software for technical users and end-users.",
-
-  //     "Stay current with industry trends and developments in AI and machine learning.",
-  //   ],
-  //   requirements: [
-  //     "Bachelor's, Master's degree or PhD. in Computer Science, Engineering, Mathematics, or a closely-related field.",
-
-  //     "Proven experience in Python scripting.",
-
-  //     "Knowledge of AI and machine learning principles, and familiarity with libraries and frameworks such as TensorFlow, PyTorch, or Scikit-learn.",
-
-  //     "Experience with automation tools and techniques.",
-
-  //     "Strong problem-solving skills and ability to think algorithmically.",
-
-  //     "Proficiency in SQL, NoSQL and experience with other databases.",
-
-  //     "Familiarity with Agile development methodologies.",
-
-  //     "Excellent communication and teamwork skills.",
-
-  //     "Experience with HuggingFace, PyTorch, Tensorflow, AutoGPT, etc.",
-  //   ],
-  //   nice_to_have:
-  //     " Master's or PhD in Machine-Learning, Data Science or another closely-related discipline.",
-  //   location: "Onsite/Hybrid",
-  //   field: "Development",
-  //   slug_url: "python-developer-(ai-automation-machine-learning)",
-  //   type_of_work: "Full-time",
-  // },
   {
     id: 2,
     title: " Data Entry (Accounting)",
