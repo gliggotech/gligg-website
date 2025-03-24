@@ -56,7 +56,7 @@ const Application_Form = ({ job }) => {
   }, []);
 
   return (
-    <div className="mt-[6px]">
+    <div className="">
       <div
         className=" bg-black text-white p-3 md:px-52 relative z-40 xl:px-[30vw] py-10"
         id="application_form"

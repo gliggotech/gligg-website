@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
         className={`${poppins.variable} ${roboto.variable} ${questrial.variable} antialiased`}
       >
         <Navbar />
-        <div className="bg-white pt-20">
+        <div className="bg-white pt-16">
           {children}
           <GoToTop />
         </div>

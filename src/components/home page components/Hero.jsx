@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { words } from "@/constants/constvalues";
 
@@ -11,18 +11,12 @@ import RotatingWords from "../Animations/RotatingWords";
 import HomeSunAnimation from "../Animations/HomeSunAnimation";
 import { scroller } from "react-scroll";
 
-
 const Hero = () => {
-
-  
   useEffect(() => {
     // Scroll to the top of the page on component mount or navigation
     window.scrollTo(0, 0);
   }, []);
   const handleclick = () => {
- 
-  
-
     if (document.getElementById("Service_Section")) {
       scroller.scrollTo("Service_Section", {
         smooth: true,
@@ -32,7 +26,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="" id="hero">
+    <div className="lg:pt-10 md:pt-12 pt-6" id="hero">
       <div className="flex justify-between items-center flex-col py-1 sm:flex-row mb-5">
         <div className="max-w-5xl px-5 sm:px-10 mb-3 order-2 ">
           <div className="text-3xl sm:text-4xl md:text-5xl font-Questrial font-bold text-black ">
@@ -65,15 +59,18 @@ const Hero = () => {
               we have the tailor-made solution for you.
             </p>
             <div className="flex justify-start items-center p-3">
-              <Link href={"/bpo"}
+              <Link
+                href={"/bpo"}
                 className=" px-4 sm:px-5 py-2 shadow-dark_shadow hover:shadow-dark_shadow_hover rounded-tr-full rounded-br-full rounded-tl-full hover:bg-gradient-to-tr from-[#000000]  to-[#130F40] hover:text-white font-Questrial"
-              
               >
                 <Text_Animation str="Explore Now" />
               </Link>
             </div>
           </div>
-          <div className="flex flex-col md:mt-2 cursor-pointer " onClick={handleclick} >
+          <div
+            className="flex flex-col md:mt-2 cursor-pointer "
+            onClick={handleclick}
+          >
             <motion.div className="flex-grow bg-Arrowcolor shadow-dark_shadow hover:shadow-dark_shadow_hover flex justify-center items-center p-12 md:p-8 rounded-3xl">
               <motion.svg
                 initial={{ y: -30 }} // Start position higher
@@ -109,9 +106,9 @@ const Hero = () => {
               to deliver the right solution for your technology solution needs.
             </p>
             <div className="flex justify-start items-center p-2 md:p-3">
-              <Link href={"/software_development"}
+              <Link
+                href={"/software_development"}
                 className=" shadow-light_shadow hover:shadow-light_shadow_hover px-4 md:px-5 py-2 bg-white text-black rounded-tr-full rounded-br-full rounded-tl-full hover:bg-gradient-to-tr from-[#2CAC68]  to-green-700 hover:text-black font-Questrial"
-             
               >
                 <Text_Animation str="Explore More" />
               </Link>
@@ -127,7 +124,6 @@ const Hero = () => {
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 quality={100}
-
                 alt="hero img"
                 className="rounded-tr-3xl shadow-dark_shadow hover:shadow-dark_shadow_hover  rounded-xl"
               />
@@ -145,15 +141,15 @@ const Hero = () => {
                   experience, we've got it covered.
                 </p>
                 <div className="flex justify-start items-center p-3">
-                  <Link href={"/cloud_solutions"}
-                   
+                  <Link
+                    href={"/cloud_solutions"}
                     className=" px-5 shadow-light_shadow hover:shadow-light_shadow_hover py-2 bg-black text-customGreen rounded-tr-full rounded-br-full rounded-tl-full hover:bg-gradient-to-tr from-[#2CAC68]  to-green-700 hover:text-black font-Questrial"
                   >
                     <Text_Animation str="Explore Cloud Solutions" />
                   </Link>
                 </div>
               </div>
-            </div>  
+            </div>
 
             <div className="shadow-dark_shadow hover:shadow-dark_shadow_hover px-6 md:px-8 lg:px-16 p-16 sm:p-20 md:p-24 flex justify-center items-center bg-customGreen max-h-52 rounded-3xl xl:max-w-screen-2xl 2xl:max-w-xl">
               <svg
