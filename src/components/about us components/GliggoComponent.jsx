@@ -14,7 +14,7 @@ const GliggoComponent = () => {
       {/* <div className="absolute right-1 top-1 p-2 rounded-full bg-customGreen cursor-pointer" onClick={handleIconClick}>
                 <ImCross className="text-black " />
             </div> */}
-      <div className="flex items-center gap-2 mb-4">
+      <div className="flex items-center gap-2 mb-2 md:mt-3">
         <p className="text-xl font-bold text-customGreen">
           Gliggo <span className="text-sm">/ˈɡlɪɡo/</span>
         </p>

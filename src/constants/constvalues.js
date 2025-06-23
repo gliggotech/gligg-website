@@ -123,8 +123,8 @@ export const slides = [
   },
 ];
 // Information about team members
+export const director_Info=[
 
-export const our_team = [
   {
     id: 1,
     imageUrl: "/furqaan.webp",
@@ -133,6 +133,8 @@ export const our_team = [
     content:
       "Furqaan is an accomplished technology expert, renowned for his comprehensive expertise in transforming businesses through digital innovation. His strategic vision and adeptness in leveraging cutting-edge technologies have been pivotal in steering organizations into the digital era with remarkable success.",
   },
+]
+export const our_team = [
   {
     id: 2,
     imageUrl: "/AbdulRahim.jpg",
