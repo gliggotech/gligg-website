@@ -44,7 +44,7 @@ const OurDirector = ({ name, position, content, imageUrl }) => {
             {name}
           </h1>
           <span className="text-lg font-bold">{position}</span>
-          <p className="text-base leading-relaxed max-w-3xl text-left">{content}</p>
+          <p className="text-base leading-relaxed max-w-7xl text-left">{content}</p>
           <span>
             <a href="#"></a>
           </span>
