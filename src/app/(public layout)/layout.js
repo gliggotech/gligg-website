@@ -23,33 +23,33 @@ const questrial = Questrial({
   variable: "--font-questrial",
 });
 
-// export const metadata = {
-//   metadataBase: new URL(`${process.env.NEXT_VERCEL_URL}`),
-//   // title: `${webInfo.company_name}`,
-//   title: {
-//     default: `${webInfo.company_name}`,
-//     template: `%s | ${webInfo.company_name}`,
-//     keywords: [
-//       `${webInfo.company_name}`,
-//       "gliggo technology",
-//       "gliggo technology home page",
-//       "gliggo technologies india pvt ltd",
-//       "gliggo anna nagar",
-//       "gliggo",
-//     ],
-//   },
-//   description:
-//     "Taking Your Business to New Heights. Gliggo Technologies India Private Limited offers top-notch IT solutions including BPO, Software Development, and Cloud-based Services.",
-//   openGraph: {
-//     title: `${webInfo.company_name}`,
-//     description:
-//       "Taking Your Business to New Heights. Gliggo Technologies India Private Limited offers top-notch IT solutions including BPO, Software Development, and Cloud-based Services.",
-//     type: "website",
-//     locale: "en_US",
-//     url: `${process.env.NEXT_VERCEL_URL}`,
-//     site_name: `${webInfo.company_name}`,
-//   },
-// };
+export const metadata = {
+  metadataBase: new URL(`${process.env.NEXT_VERCEL_URL}`),
+  // title: `${webInfo.company_name}`,
+  title: {
+    default: `${webInfo.company_name}`,
+    template: `%s | ${webInfo.company_name}`,
+    keywords: [
+      `${webInfo.company_name}`,
+      "gliggo technology",
+      "gliggo technology home page",
+      "gliggo technologies india pvt ltd",
+      "gliggo anna nagar",
+      "gliggo",
+    ],
+  },
+  description:
+    "Taking Your Business to New Heights. Gliggo Technologies India Private Limited offers top-notch IT solutions including BPO, Software Development, and Cloud-based Services.",
+  openGraph: {
+    title: `${webInfo.company_name}`,
+    description:
+      "Taking Your Business to New Heights. Gliggo Technologies India Private Limited offers top-notch IT solutions including BPO, Software Development, and Cloud-based Services.",
+    type: "website",
+    locale: "en_US",
+    url: `${process.env.NEXT_VERCEL_URL}`,
+    site_name: `${webInfo.company_name}`,
+  },
+};
 
 export default function RootLayout({ children }) {
   return (

@@ -9,7 +9,7 @@ const GliggoComponent = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
-      className="relative overflow-hidden p-6 shadow-lg hover:shadow-xl bg-white rounded-md border-l-4  font-Questrial"
+      className="relative overflow-hidden p-6 shadow-lg hover:shadow-xl bg-gray-100 rounded-md border-l-4  font-Questrial"
     >
       {/* <div className="absolute right-1 top-1 p-2 rounded-full bg-customGreen cursor-pointer" onClick={handleIconClick}>
                 <ImCross className="text-black " />

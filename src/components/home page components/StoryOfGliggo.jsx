@@ -6,7 +6,7 @@ const StoryOfGliggo = () => {
   
   return (
     // Container for the story section
-    <div className="overflow-hidden bg-white rounded-4xl px-10 pt-8" id="Story_Section">
+    <div className="overflow-hidden bg-white rounded-4xl px-5 pt-8" id="Story_Section">
       {/* Title of the story */}
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-Questrial font-bold text-black">
         The Story of Gliggo

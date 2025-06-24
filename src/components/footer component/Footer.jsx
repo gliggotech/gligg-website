@@ -330,7 +330,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Text */}
-      <div className="font-Poppins text-black py-2 px-10 mb-5 text-center bg-white">
+      <div className="font-Poppins text-black py-2 px-5 mb-5 text-center bg-white">
         <div>
           <span>Copyright ©</span> {year}{" "}
           <span className="text-green-700">Gliggo Inc.</span>{" "}

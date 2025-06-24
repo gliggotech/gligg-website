@@ -11,6 +11,7 @@ import OurDirector from "./OurDirector";
 const About = () => {
   const [heading, setHeading] = useState([]);
   const [content, setContent] = useState([]);
+  const [subHeading, setSubHeading] = useState([]);
 
   useEffect(() => {
     // Scroll to the top of the page on component mount or navigation
@@ -21,9 +22,10 @@ const About = () => {
     const headingText = "Our Story";
     const contentText =
       "We are a boutique IT consulting company specialized in providing tailor-made solutions to small and medium businesses. Our focus is to help businesses realize their full potential by helping them to reduce costs, improve efficiency, and overcome redundancies. We established our business in 2016 and since then we have helped many businesses achieve excellence though process automation and outsourcing. We have survived in a tough market of competition due to our commitment in delivering what we promise. Our 3-way approach identifies the problems and bottlenecks of the client, then we design the solution and implement it.";
-
-    const headingChars = headingText.split("");
+    const subHeadingText = " - Who We Are";
+    const headingChars = headingText.split(" ");
     const contentWords = contentText.split(" ");
+    const subHeadingWords = subHeadingText.split(" ");
 
     // Animate heading text letter by letter
     const animateHeading = () => {
@@ -39,6 +41,15 @@ const About = () => {
     const animateContent = () => {
       setContent((prevContent) =>
         prevContent.map((word, index) => ({
+          ...word,
+          isVisible: true,
+        }))
+      );
+    };
+
+    const animateSubHeading = () => {
+      setSubHeading((prevSubHeading) =>
+        prevSubHeading.map((word, index) => ({
           ...word,
           isVisible: true,
         }))
@@ -62,34 +73,53 @@ const About = () => {
         delay: index * 0.05,
       }))
     );
+    setSubHeading(
+      subHeadingWords.map((word, index) => ({
+        word,
+        isVisible: false,
+        delay: index * 0.05,
+      }))
+    );
 
     // Start animations
     animateHeading();
+    animateSubHeading();
     setTimeout(animateContent, headingChars.length * 100);
   }, []);
 
   return (
-    <div className="font-Questrial  relative w-full" id="about">
+    <div className="font-Questrial bg-white  relative w-full" id="about">
       <div className="">
         <GliggoComponent />
       </div>
 
       {/* Container for About section */}
-      <div className="text-black w-full">
+      <div className="text-black w-full bg-white">
         {/* Inner container */}
-        <div className="max-w-7xl 2xl:px-28 2xl:py-6 px-10 py-3 sm:px-20">
+        <div className="2xl:max-w-[89%] lg:w-full 2xl:px-28 2xl:py-6 px-5 py-3 sm:px-10">
           {/* Animation for heading */}
-          <motion.div className="flex flex-wrap pt-10 sm:pt-0">
+          <motion.div className="flex items-center flex-wrap pt-10 sm:pt-0 mb-2">
             {/* Mapping over heading characters and animating each */}
             {heading.map(({ char, isVisible, delay }, index) => (
               <motion.h1
                 key={index}
-                className="font-Questrial mr-2 mb-5 text-4xl md:text-5xl font-bold"
+                className="font-Questrial leading-tight mr-2  text-4xl md:text-5xl font-bold"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isVisible ? 1 : 0 }}
                 transition={{ duration: 0.5, delay }}
               >
                 {char}
+              </motion.h1>
+            ))}
+            {subHeading.map(({ word, isVisible, delay }, index) => (
+              <motion.h1
+                key={index}
+                className="font-Questrial text-customGreen leading-tight mr-2 mt-1  text-2xl md:text-3xl font-bold"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: isVisible ? 1 : 0 }}
+                transition={{ duration: 0.5, delay }}
+              >
+                {word}
               </motion.h1>
             ))}
           </motion.div>
@@ -112,7 +142,7 @@ const About = () => {
         </div>
 
         {/* Our Team section */}
-        <div className="px-10 2xl:px-28 2xl:py-5 py-3 sm:px-20 text-black">
+        <div className="px-5 2xl:px-28 2xl:py-5 py-3 sm:px-10 text-black">
           <h1 className="text-4xl md:text-5xl font-bold text-center">
             Meet Our Team
           </h1>
@@ -153,7 +183,7 @@ const About = () => {
         </div>
 
         {/* Our Strength section */}
-        <div className="bg-customGreen shadow-service_dark_shadow 2xl:px-28 2xl:py-10 sm:p-10 px-10 md:p-14 pb-5 font-Questrial relative z-10">
+        <div className="bg-customGreen shadow-service_dark_shadow 2xl:px-28 2xl:py-10 sm:p-10 px-5 md:p-14 pb-5 font-Questrial relative z-10">
           <div className="">
             <h1 className="md:text-6xl text-5xl font-bold mb-5 py-5">
               Our Strengths
