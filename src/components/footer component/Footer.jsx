@@ -10,12 +10,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import Text_Animation from "@/components/Animations/Text_Animation";
-import {
-  contactInfo,
-  navlinks,
-  socialLinks,
-
-} from "@/constants/constvalues";
+import { contactInfo, navlinks, socialLinks } from "@/constants/constvalues";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useRequest } from "@/custom hooks/useRequest";
@@ -28,7 +23,7 @@ const Footer = () => {
     handleSubmit,
     formState: { errors },
     watch,
-    reset
+    reset,
   } = useForm({
     defaultValues: {
       subscribed: false,
@@ -46,15 +41,13 @@ const Footer = () => {
       setModalVisible(true);
     }
     if (res.success == false) {
-      setTimeout(()=>
-      {
-        setError("")
+      setTimeout(() => {
+        setError("");
         reset();
-      },5000)
+      }, 5000);
     }
   };
 
-  
   const handleOk = () => {
     setModalVisible(false);
     reset();
@@ -225,25 +218,23 @@ const Footer = () => {
 
         <section className="flex flex-col md:flex-row gap-5 md:gap-0  font-Questrial justify-between items-center sm:px-32 px-5">
           {/* Navigation Links */}
-          <div className="grid grid-cols-2 md:max-w-64 gap-x-5 px-2  justify-items-center md:justify-items-start">
+          <div className="grid grid-cols-2 md:max-w-64 gap-x-5 px-2 gap-y-3  justify-items-center md:justify-items-start">
             {navlinks.map((value) => (
               <div className="" key={value.id}>
-                {value.name !== "Gliggo Investments" ? (
-                  <Link href={value.url} className="text-base sm:text-lg">
+                <Link
+                  href={value.url}
+                  target={
+                    value.name === "Gliggo Investments" ? "_blank" : undefined
+                  }
+                  className="group relative text-base sm:text-lg transition-colors duration-200 hover:text-customGreen"
+                >
+                  <span className="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-customGreen after:transition-all after:duration-500 group-hover:after:w-full">
                     {value.name}
-                  </Link>
-                ) : (
-                  <Link
-                    href={value.url}
-                    target="_blank"
-                    className="text-base sm:text-lg"
-                  >
-                    <span className="flex justify-center  items-center gap-x-1 sm:gap-x-3">
-                      {" "}
-                      {value.name} <FaExternalLinkAlt />
-                    </span>
-                  </Link>
-                )}
+                  </span>
+                  {value.name === "Gliggo Investments" && (
+                    <FaExternalLinkAlt className="inline-block ml-1" />
+                  )}
+                </Link>
               </div>
             ))}
           </div>
@@ -254,7 +245,7 @@ const Footer = () => {
               <h1 className="text-lg sm:text-xl text-center md:text-left">
                 Americas - Canada
               </h1>
-        
+
               <p className="text-sm sm:text-base text-center md:text-left">
                 <a
                   href={`https://www.google.com/maps/search/${contactInfo.address1}+${contactInfo.address2}`.replace(

@@ -98,12 +98,12 @@ const About = () => {
         {/* Inner container */}
         <div className="2xl:max-w-[89%] lg:w-full 2xl:px-28 2xl:py-6 px-5 py-3 sm:px-10">
           {/* Animation for heading */}
-          <motion.div className="flex items-center flex-wrap pt-10 sm:pt-0 mb-2">
+          <motion.div className="flex items-center  flex-wrap pt-10 sm:pt-0 mb-2">
             {/* Mapping over heading characters and animating each */}
             {heading.map(({ char, isVisible, delay }, index) => (
               <motion.h1
                 key={index}
-                className="font-Questrial leading-tight mr-2  text-4xl md:text-5xl font-bold"
+                className="font-Questrial tracking-wider  mr-2  text-4xl md:text-5xl font-bold"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isVisible ? 1 : 0 }}
                 transition={{ duration: 0.5, delay }}
@@ -114,7 +114,7 @@ const About = () => {
             {subHeading.map(({ word, isVisible, delay }, index) => (
               <motion.h1
                 key={index}
-                className="font-Questrial text-customGreen leading-tight mr-2 mt-1  text-2xl md:text-3xl font-bold"
+                className="font-Questrial text-customGreen  mr-2 mt-1  text-2xl md:text-3xl font-bold"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isVisible ? 1 : 0 }}
                 transition={{ duration: 0.5, delay }}
