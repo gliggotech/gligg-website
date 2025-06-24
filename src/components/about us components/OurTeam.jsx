@@ -25,7 +25,7 @@ const OurTeam = ({ name, position, content, imageUrl }) => {
 
     <motion.div
       // Container styles with motion animation
-      className="flex flex-col gap-y-5 items-center shadow-dark_shadow hover:shadow-dark_shadow_hover  justify-center 2xl:max-w-2xl xl:max-w-xl md:max-w-md h-auto bg-black rounded-2xl  p-10 sm:rounded-xl font-Questrial text-white hover:text-customGreen"
+      className="flex flex-col gap-y-5 items-center shadow-dark_shadow hover:shadow-dark_shadow_hover  justify-center 2xl:max-w-2xl xl:max-w-xl md:max-w-md h-auto bg-black rounded-2xl  p-10 sm:rounded-xl font-Questrial text-white group"
       // Variants for animation
       variants={{
         hidden: { opacity: 0, x: -100 },
@@ -53,7 +53,7 @@ const OurTeam = ({ name, position, content, imageUrl }) => {
       {/* Team member position */}
       <span className="font-bold">{position}</span>
       {/* Team member content */}
-      <p>{content}</p>
+      <p className="group-hover:text-customGreen ">{content}</p>
       {/* Placeholder for a link */}
       <span>
         <a href="#"></a>
