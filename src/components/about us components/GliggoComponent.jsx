@@ -16,8 +16,8 @@ const GliggoComponent = () => {
                 <ImCross className="text-black " />
             </div> */}
       <div className="flex items-center gap-2 mb-2 md:mt-3">
-        <p className="text-xl font-bold text-customGreen">
-          Gliggo <span className="text-sm">/ˈɡlɪɡo/</span>
+        <p className="text-xl flex items-center  font-bold text-customGreen">
+          Gliggo <span className="text-sm ml-2">/ˈɡlɪɡo/</span>
         </p>
         <p className="text-gray-700 text-sm">
           <code className="font-semibold">verb</code> — Derived from{" "}

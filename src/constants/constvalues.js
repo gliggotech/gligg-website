@@ -7,7 +7,7 @@ export const navlinks = [
   },
   {
     id: 2,
-    name: "About",
+    name: "About Us",
     url: "/about",
   },
   {
@@ -41,11 +41,12 @@ export const invalidRoutes = ["/gliggoinvestments.com"];
 export const contactInfo = {
   phone: "9058964449",
   email: "info@gliggo.com",
-  address1: "Suite 108 - 420 Britannia Road East",
-  address2: "Mississauga, ON L4Z 3L5",
+  address1: "Suite 108 - 420 Britannia Road East,",
+  address2: "Mississauga, ON L4Z 3L5,",
+  address3: "Canada.",
   addressIndia: "57/1-A VOC Nagar 2nd Cross Street,",
   addressIndia_Region: "Anna Nagar East,",
-  addressIndia_City: "Chennai- 600 102,",
+  addressIndia_City: "Chennai- 600 102,TN.",
   addressIndia_State: "Tamil Nadu, India",
   phoneIndia: "+91 72006 58885",
 };
@@ -128,7 +129,7 @@ export const director_Info = [
     id: 1,
     imageUrl: "/furqaan.webp",
     name: "Furqaan Hussain",
-    position: "Director",
+    position: "Director of Operations",
     content:
       "An aspiring professional with rich administrative and managerial experience and wide exposure to various aspects of business-especially in sales, marketing and human resource management. Furqaan has gained diverse experience working across various industries such as construction, real estate, travel & tourism and IT industry, which has given him a well-rounded perspective and a versatile skill set. Furqaan Hussain brings 7+ years of business management experience which ensures the smooth functioning of the administration and management.",
   },
@@ -232,8 +233,7 @@ export const industries = [
     bottomcontent:
       "We have qualified teams of professionals and individuals who are experts in their own fields.",
     background: "#f4f4f4",
-    suggestionPrompt:
-      "Have a feature in mind that could benefit your business? Let us know!",
+    suggestionPrompt: "Have a feature idea? Tell us!",
     bgimage: "/service01.jpg",
   },
   {

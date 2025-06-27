@@ -15,6 +15,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { useRequest } from "@/custom hooks/useRequest";
 import newsletterFunction from "@/app/actions/subscribeFunction";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
   const year = new Date().getFullYear(); // Getting the current year
@@ -157,9 +158,7 @@ const Footer = () => {
             </label>
 
             {errors.email && (
-              <p className="text-red-500 text-sm -mt-4">
-                {errors.email.message}
-              </p>
+              <p className="text-red-500  -mt-4">{errors.email.message}</p>
             )}
 
             <div className="flex gap-x-2 items-center">
@@ -212,110 +211,152 @@ const Footer = () => {
           <div className="font-Poppins  xl:text-[300px] text-[65px] sm:text-[175px] md:text-[200px] font-bold bg-clip-text bg-gradient-to-tr from-[#2CAC68]  to-green-700 text-transparent ">
             <Text_Animation className="items-right " str="Gliggo" />
             <br />
-            {/* <small><Text_Animation str="Go Digital" className="text-sm" /></small> */}
+            {/* <small><Text_Animation str="Go Digital" className="" /></small> */}
           </div>
         </section>
 
-        <section className="flex flex-col md:flex-row gap-5 md:gap-0  font-Questrial justify-between items-center sm:px-32 px-5">
-          {/* Navigation Links */}
-          <div className="grid grid-cols-2 md:max-w-64 gap-x-5 px-2 gap-y-3  justify-items-center md:justify-items-start">
-            {navlinks.map((value) => (
-              <div className="" key={value.id}>
-                <Link
-                  href={value.url}
-                  target={
-                    value.name === "Gliggo Investments" ? "_blank" : undefined
-                  }
-                  className="group relative text-base sm:text-lg transition-colors duration-200 hover:text-customGreen"
-                >
-                  <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-customGreen after:transition-all after:duration-500 group-hover:after:w-full">
-                    {value.name}
-                  </span>
-                  {value.name === "Gliggo Investments" && (
-                    <FaExternalLinkAlt className="inline-block ml-1" />
-                  )}
-                </Link>
+        <section className=" py-4 font-Questrial">
+          <div className=" px-6 sm:px-8 lg:px-16">
+            {/* Main Footer Content */}
+            <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12">
+              {/* Navigation Links */}
+              <div className="lg:col-span-1">
+                <h3 className="text-xl font-semibold mb-6 text-black">
+                  Quick Links
+                </h3>
+                <div className="grid grid-cols-2 sm:grid-cols-2 gap-3">
+                  {navlinks.map((value) => (
+                    <div key={value.id}>
+                      <Link
+                        href={value.url}
+                        target={
+                          value.name === "Gliggo Investments"
+                            ? "_blank"
+                            : undefined
+                        }
+                        className="group relative text-base transition-colors duration-200 hover:text-customGreen flex items-center"
+                      >
+                        <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-customGreen after:transition-all after:duration-300 group-hover:after:w-full">
+                          {value.name}
+                        </span>
+                        {value.name === "Gliggo Investments" && (
+                          <FaExternalLinkAlt className="ml-2 w-3 h-3" />
+                        )}
+                      </Link>
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
 
-          {/* Contact Information */}
-          <div className="flex flex-1 flex-col xl:flex-row justify-center items-center gap-y-2 gap-x-10  px-5 sm:pl-10 py-5 sm:py-0 font-Questrial">
-            <div className="">
-              <h1 className="text-lg sm:text-xl text-center md:text-left">
-                Americas - Canada
-              </h1>
-
-              <p className="text-sm sm:text-base text-center md:text-left">
-                <a
-                  href={`https://www.google.com/maps/search/${contactInfo.address1}+${contactInfo.address2}`.replace(
-                    / /g,
-                    "+"
-                  )}
-                  target="_blank"
-                >
-                  {contactInfo.address1}
-                  <br />
-                  {contactInfo.address2}
-                </a>
-              </p>
-              <br />
-              <p className="text-center md:text-left">
-                {" "}
-                <a href={`tel:${contactInfo.phone}`}>
-                  Tel: {formatCanadianPhoneNumber(contactInfo.phone)}
-                </a>
-              </p>
-              <p className="text-center md:text-left">
-                <a href={`mailto:${contactInfo.email}`}>
-                  Email: {contactInfo.email}
-                </a>
-              </p>
-            </div>
-            <div className=" ">
-              <h1 className="text-lg sm:text-xl text-center md:text-left">
-                Asia - India
-              </h1>
-              <p className="text-sm sm:text-base text-center md:text-left">
-                {contactInfo.addressIndia}
-              </p>
-              <p className="text-sm sm:text-base text-center md:text-left">
-                {contactInfo.addressIndia_Region}
-              </p>
-              <p className="text-sm sm:text-base text-center md:text-left">
-                {contactInfo.addressIndia_City}
-              </p>
-              <p className="text-sm sm:text-base text-center md:text-left">
-                {contactInfo.addressIndia_State}
-              </p>
-              <p className="text-center md:text-left">
-                <a href={`tel:${contactInfo.phoneIndia}`}>
-                  Tel: {contactInfo.phoneIndia}
-                </a>
-              </p>
-              <p className="text-center md:text-left">
-                <a href={`mailto:${contactInfo.email}`}>
-                  Email: {contactInfo.email}
-                </a>
-              </p>
-            </div>
-          </div>
-
-          {/* Social Media Links */}
-          <div className="flex justify-center items-center max-w-40 md:items-center md:justify-start 2xl:px-20 px-4 mt-5 sm:mt-0">
-            <ul className="flex sm:flex-col gap-x-7 gap-y-5 md:items-center md:w-full">
-              {socialLinks.map((value) => (
-                <li key={value.url}>
+              {/* India Office */}
+              <div className="lg:col-span-1">
+                <div className="flex items-center mb-4">
+                  <MapPin className="w-5 h-5 text-customGreen mr-2" />
+                  <h3 className="text-xl font-semibold text-black">
+                    Asia - India
+                  </h3>
+                </div>
+                <div className="space-y-1 text-black ">
                   <a
-                    href={value.url}
-                    className="text-base sm:text-lg"
+                    href={`https://www.google.com/maps/search/${contactInfo.addressIndia}+${contactInfo.addressIndia_Region}+${contactInfo.addressIndia_City}`.replace(
+                      / /g,
+                      "+"
+                    )}
                     target="_blank"
+                    rel="noopener noreferrer"
+                    className="block leading-relaxed hover:text-customGreen transition-colors duration-200"
                   >
-                    {showicon(value.name)}
+                    {contactInfo.addressIndia}
+                    <br />
+                    {contactInfo.addressIndia_Region}
+                    <br />
+                    {contactInfo.addressIndia_City}
                   </a>
-                </li>
-              ))}
-            </ul>
+
+                  <div className=" space-y-2">
+                    <a
+                      href={`tel:${contactInfo.phoneIndia}`}
+                      className="flex items-center  hover:text-customGreen transition-colors duration-200"
+                    >
+                      <Phone className="w-4 h-4 text-customGreen mr-2 flex-shrink-0" />
+                      {contactInfo.phoneIndia}
+                    </a>
+                    <a
+                      href={`mailto:${contactInfo.email}`}
+                      className="flex items-center  hover:text-customGreen transition-colors duration-200"
+                    >
+                      <Mail className="w-4 h-4 text-customGreen mr-2 flex-shrink-0" />
+                      {contactInfo.email}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Canada Office */}
+              <div className="lg:col-span-1">
+                <div className="flex items-center mb-4">
+                  <MapPin className="w-5 h-5 text-customGreen mr-2" />
+                  <h3 className="text-xl font-semibold text-black">
+                    Americas - Canada
+                  </h3>
+                </div>
+                <div className="space-y-2 ">
+                  <a
+                    href={`https://www.google.com/maps/search/${contactInfo.address1}+${contactInfo.address2}`.replace(
+                      / /g,
+                      "+"
+                    )}
+                    target="_blank"
+                    className="block  leading-relaxed hover:text-customGreen transition-colors duration-200"
+                  >
+                    {contactInfo.address1}
+                    <br />
+                    {contactInfo.address2}
+                    <br />
+                    {contactInfo.address3}
+                  </a>
+
+                  <div className=" space-y-2">
+                    <a
+                      href={`tel:${contactInfo.phone}`}
+                      className="flex items-center  hover:text-customGreen transition-colors duration-200"
+                    >
+                      <Phone className="w-4 h-4 text-customGreen mr-2 flex-shrink-0" />
+                      {formatCanadianPhoneNumber(contactInfo.phone)}
+                    </a>
+                    <a
+                      href={`mailto:${contactInfo.email}`}
+                      className="flex items-center  hover:text-customGreen transition-colors duration-200"
+                    >
+                      <Mail className="w-4 h-4 text-customGreen mr-2 flex-shrink-0" />
+                      {contactInfo.email}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Media Links */}
+              <div className="lg:col-span-1">
+                <h3 className="text-xl font-semibold mb-6 text-black">
+                  Connect With Us
+                </h3>
+                <div className="flex flex-wrap gap-4 lg:flex-col lg:gap-3">
+                  {socialLinks.map((value) => (
+                    <a
+                      key={value.url}
+                      href={value.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-base hover:text-customGreen transition-colors duration-200 group"
+                    >
+                      <span className="mr-3 transform group-hover:scale-110 transition-transform duration-200">
+                        {showicon(value.name)}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>

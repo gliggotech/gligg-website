@@ -19,10 +19,10 @@ const About = () => {
   }, []);
 
   useEffect(() => {
-    const headingText = "Our Story";
+    const headingText = "Our Story -";
     const contentText =
       "We are a boutique IT consulting company specialized in providing tailor-made solutions to small and medium businesses. Our focus is to help businesses realize their full potential by helping them to reduce costs, improve efficiency, and overcome redundancies. We established our business in 2016 and since then we have helped many businesses achieve excellence though process automation and outsourcing. We have survived in a tough market of competition due to our commitment in delivering what we promise. Our 3-way approach identifies the problems and bottlenecks of the client, then we design the solution and implement it.";
-    const subHeadingText = "- Who We Are";
+    const subHeadingText = "Who We Are";
     const headingChars = headingText.split(" ");
     const contentWords = contentText.split(" ");
     const subHeadingWords = subHeadingText.split(" ");
