@@ -129,7 +129,7 @@ export const director_Info = [
     id: 1,
     imageUrl: "/furqaan.webp",
     name: "Furqaan Hussain",
-    position: "Director of Operations",
+    position: "Director & Director of Operations",
     content:
       "An aspiring professional with rich administrative and managerial experience and wide exposure to various aspects of business-especially in sales, marketing and human resource management. Furqaan has gained diverse experience working across various industries such as construction, real estate, travel & tourism and IT industry, which has given him a well-rounded perspective and a versatile skill set. Furqaan Hussain brings 7+ years of business management experience which ensures the smooth functioning of the administration and management.",
   },
