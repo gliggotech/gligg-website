@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import SunAnimation3 from "../Animations/SunAnimation3";
 import Text_Animation from "../Animations/Text_Animation";
@@ -6,16 +6,16 @@ import Link from "next/link";
 
 const Industry = ({ industry }) => {
   const indbg = industry.background;
- 
+
   return (
     // Main container for an industry
     <div
-      className={`max-w-3xl md:max-w-screen-xl h-auto sm:px-10 sm:py-5 p-5 text-black rounded-[40px] shadow-dark_shadow hover:shadow-dark_shadow_hover`}
+      className={`max-w-3xl md:max-w-screen-xl h-auto sm:px-10 sm:py-5 p-5 ${industry.background == "#2CAC68" ? "text-white" : "text - black"}  rounded-[40px] shadow-dark_shadow hover:shadow-dark_shadow_hover`}
       style={{ backgroundColor: `${industry.background}` }}
     >
       {/* Container for the SunAnimation3 component */}
       <div className="sm:mb-1 mb-2 p-5 flex justify-center items-center">
-        <SunAnimation3 />
+        <SunAnimation3 color={industry.background == "#2CAC68" ? "white" : "black"}/>
       </div>
       {/* Container for industry content */}
       <div className="flex flex-col justify-center items-center gap-y-5 font-Questrial">
@@ -43,11 +43,11 @@ const Industry = ({ industry }) => {
         {/* Bottom content of the industry */}
         <div>
           {industry.bottomcontent}
-          <Link href={industry.slug}
+          <Link
+            href={industry.slug}
             className={`ml-1 underline text cursor-pointer text-nowrap ${
-              indbg == "#f4f4f4" ? "text-[#2CAC68]" : "text-[#f4f4f4]"
+              indbg == "#f4f4f4" ? "text-[#2CAC68]" : "text-black"
             }`}
-        
           >
             Read more..
           </Link>

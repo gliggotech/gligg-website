@@ -22,7 +22,7 @@ const About = () => {
     const headingText = "Our Story";
     const contentText =
       "We are a boutique IT consulting company specialized in providing tailor-made solutions to small and medium businesses. Our focus is to help businesses realize their full potential by helping them to reduce costs, improve efficiency, and overcome redundancies. We established our business in 2016 and since then we have helped many businesses achieve excellence though process automation and outsourcing. We have survived in a tough market of competition due to our commitment in delivering what we promise. Our 3-way approach identifies the problems and bottlenecks of the client, then we design the solution and implement it.";
-    const subHeadingText = " - Who We Are";
+    const subHeadingText = "- Who We Are";
     const headingChars = headingText.split(" ");
     const contentWords = contentText.split(" ");
     const subHeadingWords = subHeadingText.split(" ");
@@ -98,12 +98,12 @@ const About = () => {
         {/* Inner container */}
         <div className="2xl:max-w-[89%] lg:w-full 2xl:px-28 2xl:py-6 px-5 py-3 sm:px-10">
           {/* Animation for heading */}
-          <motion.div className="flex items-center  flex-wrap pt-10 sm:pt-0 mb-2">
+          <motion.div className="flex items-center  flex-wrap  sm:pt-0 mb-2">
             {/* Mapping over heading characters and animating each */}
             {heading.map(({ char, isVisible, delay }, index) => (
               <motion.h1
                 key={index}
-                className="font-Questrial tracking-wider  mr-2  text-4xl md:text-5xl font-bold"
+                className="font-Questrial tracking-wider  mr-2  text-2xl md:text-5xl font-bold"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isVisible ? 1 : 0 }}
                 transition={{ duration: 0.5, delay }}
@@ -114,7 +114,7 @@ const About = () => {
             {subHeading.map(({ word, isVisible, delay }, index) => (
               <motion.h1
                 key={index}
-                className="font-Questrial text-customGreen  mr-2 mt-1  text-2xl md:text-3xl font-bold"
+                className="font-Questrial text-customGreen  mr-2 mt-1  text-xl md:text-3xl font-bold"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isVisible ? 1 : 0 }}
                 transition={{ duration: 0.5, delay }}

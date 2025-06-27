@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const GliggoComponent = () => {
   return (
@@ -19,7 +20,28 @@ const GliggoComponent = () => {
           Gliggo <span className="text-sm">/ˈɡlɪɡo/</span>
         </p>
         <p className="text-gray-700 text-sm">
-          <code className="font-semibold">verb</code> Derived from "Click, Go!".
+          <code className="font-semibold">verb</code> — Derived from{" "}
+          <motion.span
+            className="m-1 text-customGreen relative font-semibold"
+            animate={{
+              scale: [1, 1.08, 1],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            whileHover={{
+              scale: 1.15,
+              filter: "drop-shadow(0 0 5px currentColor)",
+            }}
+            style={{
+              display: "inline-block",
+            }}
+          >
+            <Link href="/services">"Click, Go!"</Link>
+          </motion.span>
+          .
         </p>
       </div>
       <motion.div

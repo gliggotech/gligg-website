@@ -48,7 +48,7 @@ export const Navbar = () => {
   return (
     <nav className="overflow-hidden text-black ">
       {/* Desktop navbar */}
-      <div className="bg-customGray py-3 fixed top-0 w-full z-10 overflow-hidden rounded-br-md rounded-bl-md shadow-dark_shadow hover:shadow-dark_navbar_shadow_hover">
+      <div className="bg-white py-3 fixed top-0 w-full z-10 overflow-hidden  shadow-dark_shadow hover:shadow-dark_navbar_shadow_hover">
         <div className="flex justify-between bg-transparent items-center px-7 xl:px-10">
           {/* Logo */}
           <div className=" md:ml-6 xl:ml-10  ">
@@ -62,7 +62,7 @@ export const Navbar = () => {
                 fill
                 priority
                 quality={100}
-                className="object-contain   rounded-lg bg-none shadow-[0px_10px_80px_-100px_rgb(44,172,104),1px_0px_10px_0px_rgb(44,172,104)] text-center transform transition-transform duration-300 hover:scale-105"
+                className="object-contain   rounded-lg  text-center transform transition-transform duration-300 hover:scale-105"
               />
             </Link>
           </div>

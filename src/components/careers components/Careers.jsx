@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
-import { CiLocationOn } from "react-icons/ci"; // Importing location icon
+import { CiLocationOn, CiMail } from "react-icons/ci"; // Importing location icon
 import { IoMdTime } from "react-icons/io"; // Importing time icon
-import { BsPersonWorkspace } from "react-icons/bs";
+import { BsMailbox, BsPersonWorkspace } from "react-icons/bs";
 
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaMailBulk } from "react-icons/fa";
 import Text_Animation from "../Animations/Text_Animation";
 import { careers } from "@/constants/constvalues";
 import Link from "next/link";
@@ -95,21 +95,36 @@ const Careers = () => {
           </article>
         ))}
         {/* Section for displaying link to more jobs */}
-        <div className="text-center flex flex-col gap-y-7 justify-center items-center  ">
+        <div className="text-center flex flex-col gap-y-7 justify-center items-center">
           <h3 className="text-3xl">Have different skill sets? </h3>
-          {/* Link to view more jobs on Indeed */}
-          <a
-            href="https://in.indeed.com/cmp/Gliggo-Technologies-India-Private-Limited"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={viewMoreJobs}
-            className="bg-customGreen hover:bg-white text-black font-bold  p-3 rounded-md max-w-sm "
-          >
-            <span>
-              <Text_Animation str={viewMoreJobs + "  "} />
-              <FaExternalLinkAlt className="inline" />
-            </span>
-          </a>
+          <div className="flex gap-5 flex-col md:flex-row">
+            {/* Mail Link */}
+            <a
+              href="mailto:info@gliggo.com?subject=Job Application"
+              rel="noopener noreferrer"
+              aria-label="send your cv to us"
+              className="peer bg-white hover:bg-customGreen peer-hover:bg-white text-black font-bold p-3 rounded-md max-w-sm transition-colors duration-300"
+            >
+              <span className="flex gap-2 justify-center items-center">
+                <Text_Animation str="Send your CV to us" />
+                <FaMailBulk className="inline" />
+              </span>
+            </a>
+
+            {/* Indeed Link */}
+            <a
+              href="https://in.indeed.com/cmp/Gliggo-Technologies-India-Private-Limited"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={viewMoreJobs}
+              className="peer bg-customGreen hover:bg-white peer-hover:bg-white text-black font-bold p-3 rounded-md max-w-sm transition-colors duration-300"
+            >
+              <span className="flex gap-2 justify-center items-center">
+                <Text_Animation str={viewMoreJobs} />
+                <FaExternalLinkAlt className="inline" />
+              </span>
+            </a>
+          </div>
         </div>
       </section>
     </div>

@@ -13,7 +13,7 @@ const EachCareer = ({ job }) => {
   }, []);
 
   return (
-    <div className="relative sm:mt-3 lg:mt-6  z-40">
+    <div className=" ">
       <div className="text-center py-12 bg-black text-white font-Questrial p-5 xl:px-36">
         <div className="flex flex-col gap-y-6 sm:px-28">
           <div className="flex flex-col justify-center items-center">
@@ -53,10 +53,10 @@ const EachCareer = ({ job }) => {
           )}
 
           {/* Displaying job responsibilities with text animation */}
+          <div className="flex flex-col gap-y-1 px-2">
           <h1 className="text-2xl text-left text-customGreen px-2">
             <Text_Animation str="Responsibilities :" />{" "}
           </h1>
-          <div className="flex flex-col gap-y-4 px-2">
             <ol className=" text-left">
               {job.responsibilities.map((item, index) => (
                 <li key={index} className="">
@@ -67,11 +67,11 @@ const EachCareer = ({ job }) => {
             </ol>
           </div>
           {/* Displaying job requirements with text animation */}
+          <div className="flex flex-col gap-y-1 px-2">
           <h1 className="text-2xl text-left text-customGreen px-2">
             {" "}
             <Text_Animation str="Requirements : " />
           </h1>
-          <div className="flex flex-col gap-y-4 px-2">
             <ol className=" text-left">
               {job.requirements.map((item, index) => (
                 <li key={index} className="">

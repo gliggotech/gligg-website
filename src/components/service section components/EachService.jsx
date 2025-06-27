@@ -3,14 +3,14 @@ import Text_Animation from "../Animations/Text_Animation";
 import Link from "next/link";
 
 const EachService = ({ industry }) => {
-  const isLightBackground = industry.background === "#f4f4f4";
+ 
   const imageUrl = industry.bgimage;
 
   return (
     <div
       className={` w-full xl:min-h-[41vh] z-20 sm:w-[60vw] md:w-[55vw] xl:w-[50vw] flex flex-col justify-center 
         
-       shadow-service_light_shadow hover:shadow-light_shadow_hover items-center gap-y-3 rounded-3xl font-Questrial sticky sm:top-8 top-5 p-3 sm:p-10`}
+       shadow-service_light_shadow hover:shadow-light_shadow_hover items-center gap-y-3 rounded-3xl font-Questrial sticky sm:top-8 top-5 p-3 `}
       style={{
         backgroundImage: `url(${imageUrl})`,
         backgroundSize: "cover",
@@ -22,7 +22,7 @@ const EachService = ({ industry }) => {
         className="absolute inset-0 bg-black opacity-65 rounded-3xl pointer-events-none"
         aria-hidden="true"
       ></div>
-      <div className="relative w-full h-full flex flex-col justify-center items-center text-white p-2 sm:p-8 z-10">
+      <div className="relative w-full h-full flex flex-col justify-center items-center text-white p-2 sm:p-5 z-10">
         <div className="flex justify-center items-center max-h-52 px-4">
           <svg
             preserveAspectRatio="none"

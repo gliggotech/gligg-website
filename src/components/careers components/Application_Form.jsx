@@ -6,6 +6,7 @@ import Text_Animation from "../Animations/Text_Animation";
 import { useForm } from "react-hook-form";
 import { job_apply } from "@/app/actions/job_Application_Function";
 import { useRequest } from "@/custom hooks/useRequest";
+import { useRouter } from "next/navigation";
 
 const Application_Form = ({ job }) => {
   const {
@@ -20,7 +21,7 @@ const Application_Form = ({ job }) => {
   const file = watch("resume");
   const { success, error, loading, sendRequest, setError, setSuccess } =
     useRequest();
-
+  const router = useRouter();
   const onSubmit = async (data) => {
     // Create FormData for file and other data
     const formData = new FormData();
@@ -42,7 +43,8 @@ const Application_Form = ({ job }) => {
       reset();
       setTimeout(() => {
         setSuccess("");
-      }, 5000);
+        router.push("/careers");
+      }, 2000);
     } else {
       setTimeout(() => {
         setError("");
@@ -58,32 +60,32 @@ const Application_Form = ({ job }) => {
   return (
     <div className="">
       <div
-        className=" bg-black text-white p-3 md:px-52 relative z-40 xl:px-[30vw] py-10"
+        className=" bg-white text-black p-3 md:px-52 sm:pt-9  md:pt-10 pt-9  xl:px-[30vw] py-3"
         id="application_form"
       >
-        <h1 className="text-center text-4xl uppercase font-bold mb-10">
+        <h1 className="text-center text-black text-xl md:text-2xl lg:text-3xl uppercase font-bold mb-5">
           <Text_Animation str="Application Form" />
         </h1>
 
         {/* Job Title */}
-        <h4 className="p-3 text-2xl border-2 border-customGreen text-center mb-3 bg-customGreen text-black rounded-3xl">
+        <h4 className="p-1 text-xl  border-2 border-customGreen text-center mb-5 bg-customGreen text-black rounded-3xl">
           <Text_Animation str={job.title} />
         </h4>
 
-        <form className="p-2" onSubmit={handleSubmit(onSubmit)}>
-          <div className="flex flex-col gap-y-10">
-            <h1 className="text-2xl font-bold">
+        <form className="p-2 max-w-3xl" onSubmit={handleSubmit(onSubmit)}>
+          <div className="flex flex-col gap-y-5">
+            <h1 className="text-2xl font-bold text-black">
               <Text_Animation str="Personal Info" />
             </h1>
             <div className="flex flex-col gap-y-6">
               {/* First Name */}
-              <div className="flex flex-col max-w-xl gap-y-2 mb-3">
-                <label htmlFor="first_name" className="text-white">
-                  First Name <span className="text-red-100">*</span>
+              <div className="flex flex-col  gap-y-2 mb-3">
+                <label htmlFor="first_name" className="text-black">
+                  First Name <span className="text-red-700">*</span>
                 </label>
                 <input
                   type="text"
-                  className="border-b-2 p-3 outline-none required bg-black"
+                  className="border-b-2 border-black  outline-none required bg-white"
                   {...register("first_name", {
                     required: "First name is required",
                   })}
@@ -96,13 +98,13 @@ const Application_Form = ({ job }) => {
               </div>
 
               {/* Last Name */}
-              <div className="flex flex-col max-w-xl gap-y-2 mb-3">
-                <label htmlFor="last_name" className="text-white">
-                  Last Name <span>*</span>
+              <div className="flex flex-col  gap-y-2 mb-3">
+                <label htmlFor="last_name" className="text-black">
+                  Last Name <span className="text-red-700">*</span>
                 </label>
                 <input
                   type="text"
-                  className="border-b-2 p-3 outline-none required bg-black"
+                  className="border-b-2 border-black outline-none required bg-white"
                   {...register("last_name", {
                     required: "Last name is required",
                   })}
@@ -115,13 +117,13 @@ const Application_Form = ({ job }) => {
               </div>
 
               {/* Email */}
-              <div className="flex flex-col max-w-xl gap-y-2 mb-3">
-                <label htmlFor="email" className="text-white">
-                  Email <span>*</span>
+              <div className="flex flex-col  gap-y-2 mb-3">
+                <label htmlFor="email" className="text-black">
+                  Email <span className="text-red-700">*</span>
                 </label>
                 <input
                   type="email"
-                  className="border-b-2 p-3 outline-none required bg-black"
+                  className="border-b-2 border-black outline-none required bg-white"
                   {...register("email", {
                     required: "Email is required",
                     pattern: {
@@ -135,13 +137,13 @@ const Application_Form = ({ job }) => {
                 )}
               </div>
               {/* Contact Number */}
-              <div className="flex flex-col max-w-xl gap-y-2 mb-3">
-                <label htmlFor="contact_Number" className="text-white">
-                  Contact Number <span>*</span>
+              <div className="flex flex-col  gap-y-2 mb-3">
+                <label htmlFor="contact_Number" className="text-black">
+                  Contact Number <span className="text-red-700">*</span>
                 </label>
                 <input
-                  type="contact_Number"
-                  className="border-b-2 p-3 outline-none required bg-black"
+                  type="number"
+                  className="border-b-2 border-black outline-none required bg-white"
                   {...register("contact_Number", {
                     required: "Contact Number is required",
                     pattern: {
@@ -158,13 +160,13 @@ const Application_Form = ({ job }) => {
               </div>
 
               {/* Address */}
-              <div className="flex flex-col max-w-xl gap-y-2 mb-3">
-                <label htmlFor="address" className="text-white">
-                  Address <span className="text-red-100">*</span>
+              <div className="flex flex-col  gap-y-2 mb-3">
+                <label htmlFor="address" className="text-black">
+                  Address <span className="text-red-600">*</span>
                 </label>
                 <input
                   type="text"
-                  className="border-b-2 p-3 outline-none required bg-black"
+                  className="border-b-2 border-black outline-none required bg-white"
                   {...register("address", {
                     required: "Address is required",
                   })}
@@ -180,60 +182,60 @@ const Application_Form = ({ job }) => {
             </h1>
             <div className="flex flex-col gap-y-6">
               {/* University */}
-              <div className="flex flex-col max-w-xl gap-y-2 mb-3">
-                <label htmlFor="university" className="text-white">
+              <div className="flex flex-col  gap-y-2 mb-3">
+                <label htmlFor="university" className="text-black">
                   University
                 </label>
                 <input
                   type="text"
-                  className="border-b-2 p-3 outline-none required bg-black"
+                  className="border-b-2 border-black  outline-none required bg-white"
                   {...register("university")}
                 />
               </div>
 
               {/* Expertise */}
-              <div className="flex flex-col max-w-xl gap-y-2 mb-3">
-                <label htmlFor="expertise" className="text-white">
+              <div className="flex flex-col  gap-y-2 mb-3">
+                <label htmlFor="expertise" className="text-black">
                   Expertise
                 </label>
                 <input
                   type="text"
-                  className="border-b-2 p-3 outline-none required bg-black"
+                  className="border-b-2 border-black  outline-none required bg-white"
                   {...register("expertise")}
                 />
               </div>
               {job?.show_Github && (
                 <div>
-                  <div className="flex flex-col max-w-xl gap-y-2 mb-3">
-                    <label htmlFor="githublink" className="text-white">
+                  <div className="flex flex-col  gap-y-2 mb-3">
+                    <label htmlFor="githublink" className="text-black">
                       GitHub Profile Link
                     </label>
                     <input
                       type="text"
-                      className="border-b-2 p-3 outline-none required bg-black"
+                      className="border-b-2 border-black outline-none required bg-white"
                       {...register("githublink")}
                     />
                   </div>
                 </div>
               )}
 
-              <div className="flex flex-col max-w-xl gap-y-2 mb-3">
-                <label htmlFor="linkedinlink" className="text-white">
+              <div className="flex flex-col  gap-y-2 mb-3">
+                <label htmlFor="linkedinlink" className="text-black">
                   LinkedIn Profile Link
                 </label>
                 <input
                   type="text"
-                  className="border-b-2 p-3 outline-none required bg-black"
+                  className="border-b-2 border-black outline-none required bg-white"
                   {...register("linkedinlink")}
                 />
               </div>
-              <div className="flex flex-col max-w-xl gap-y-2 mb-3">
-                <label htmlFor="bio" className="text-white">
+              <div className="flex flex-col  gap-y-2 mb-3">
+                <label htmlFor="bio" className="text-black">
                   Short Bio (Up To 250 Characters)
                 </label>
                 <textarea
                   type="text"
-                  className="border-b-2 p-3 outline-none required bg-black"
+                  className="border-b-2 border-black outline-none required bg-white"
                   {...register("bio", {
                     maxLength: {
                       value: 250,
@@ -242,15 +244,15 @@ const Application_Form = ({ job }) => {
                     required: "Short Bio is required",
                   })}
                 />
+                {errors.bio && (
+                  <span className="text-red-700">{errors.bio.message}</span>
+                )}
               </div>
-              {errors.bio && (
-                <span className="text-red-700">{errors.bio.message}</span>
-              )}
 
               {/* Resume Upload */}
-              <div className="flex flex-col max-w-xl gap-y-2 mb-3">
-                <label htmlFor="resume" className="text-white">
-                  Upload Your Resume <span>*</span>
+              <div className="flex flex-col  gap-y-2 mb-3">
+                <label htmlFor="resume" className="text-black">
+                  Upload Your Resume <span className="text-red-700">*</span>
                 </label>
                 <div className="flex items-center gap-x-5">
                   <input
@@ -260,7 +262,7 @@ const Application_Form = ({ job }) => {
                   />
                   {file && (
                     <ImCross
-                      className="text-2xl rounded-full bg-black border-white border-2 p-1 cursor-pointer"
+                      className="text-2xl rounded-full bg-white border-red-600 text-red-600 border-2 p-1 cursor-pointer"
                       onClick={() => {
                         resetField("resume");
                         setValue("resume", null);
@@ -278,7 +280,7 @@ const Application_Form = ({ job }) => {
             {/* Submit Button */}
             <button
               disabled={loading}
-              className="bg-customGreen hover:bg-customGray hover:text-black text-black font-bold p-3 rounded-md max-w-sm"
+              className="bg-customGreen hover:text-black text-black font-bold p-3 rounded-md max-w-sm"
             >
               {loading ? "Submitting..." : "Submit"}
             </button>

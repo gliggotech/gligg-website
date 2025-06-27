@@ -228,7 +228,7 @@ const Footer = () => {
                   }
                   className="group relative text-base sm:text-lg transition-colors duration-200 hover:text-customGreen"
                 >
-                  <span className="relative after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-customGreen after:transition-all after:duration-500 group-hover:after:w-full">
+                  <span className="relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-customGreen after:transition-all after:duration-500 group-hover:after:w-full">
                     {value.name}
                   </span>
                   {value.name === "Gliggo Investments" && (

@@ -70,7 +70,7 @@ const Services = () => {
         <div
           className={`
             shadow-service_dark_shadow flex flex-col flex-1 justify-center 
-            items-center p-5 sm:p-12 2xl:p-16 bg-black rounded-3xl py-28
+            items-center p-2 sm:p-12 2xl:p-16 bg-black rounded-3xl py-28
             ${scrolled ? "z-50" : "z-0"}
           `}
         >

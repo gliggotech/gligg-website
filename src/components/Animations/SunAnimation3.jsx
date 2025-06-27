@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SunAnimation3 = () => {
+const SunAnimation3 = ({color="black"}) => {
   return (
     <div className="">
             <svg
@@ -14,6 +14,9 @@ const SunAnimation3 = () => {
               role="presentation"
               aria-hidden="true"
               aria-label=""
+              fill={color}
+
+              
             >
               <g>
                 <path d="m72.052 25.173 4.777-2.057 15.342 36.848-.1-39.957L97.309 20v65.506L72.052 25.173z"></path>
