@@ -40,7 +40,7 @@ const Contact_Form = () => {
 
   return (
     <div
-      className="shadow-service_dark_shadow  bg-black font-Questrial relative z-0 py-5 overflow-hidden"
+      className="shadow-service_dark_shadow  bg-black font-Questrial relative z-0 pt-5 overflow-hidden"
       id="contact"
     >
       {/* Modal for displaying success/error message */}
@@ -59,7 +59,7 @@ const Contact_Form = () => {
         </div>
       )}
 
-      <div className="flex flex-col md:flex-row justify-between gap-y-10 gap-x-5 sm:p-10 py-6 px-4 mb-20">
+      <div className="flex flex-col md:flex-row justify-between gap-y-10 gap-x-5 sm:p-5 py-6 px-4 ">
         {/* Image Section */}
         <div
           className="bg-cover bg-no-repeat bg-center flex justify-center items-center relative md:w-[50vw] rounded-3xl  xl:flex-1 h-[40vh]  lxl:h-[50vh] md:h-[50vh] "

@@ -18,7 +18,7 @@ const OurDirector = ({ name, position, content, imageUrl }) => {
   return (
     <div className="w-full">
       <motion.div
-        className="flex flex-col lg:flex-row lg:gap-x-8 gap-y-6 items-center shadow-dark_shadow hover:shadow-dark_shadow_hover justify-center w-full h-auto bg-black rounded-2xl p-10 sm:rounded-xl font-Questrial text-white group"
+        className="flex flex-col lg:flex-row lg:gap-x-8 gap-y-6 items-center shadow-dark_shadow hover:shadow-dark_shadow_hover justify-center w-full h-auto bg-black rounded-2xl p-5 lg:p-10 sm:rounded-xl font-Questrial text-white group"
         variants={{
           hidden: { opacity: 0, x: -100 },
           visible: { opacity: 1, x: 0 },

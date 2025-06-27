@@ -54,7 +54,7 @@ export const Navbar = () => {
           <div className=" md:ml-6 xl:ml-10  ">
             <Link
               href="/"
-              className="flex relative  w-20 h-10 sm:w-24 sm:h-14 md:h-16 md:w-28  lg:w-32     shadow-logo-shadow rounded-lg"
+              className="flex relative  w-24 h-16 sm:w-24 sm:h-14 md:h-16 md:w-28  lg:w-32     shadow-logo-shadow rounded-lg"
             >
               <Image
                 src={"/image_03.png"}
