@@ -111,7 +111,6 @@ const Careers = () => {
               </span>
             </a>
 
-            {/* Indeed Link */}
             <a
               href="https://in.indeed.com/cmp/Gliggo-Technologies-India-Private-Limited"
               target="_blank"
