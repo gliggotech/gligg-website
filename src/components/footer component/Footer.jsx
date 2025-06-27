@@ -216,11 +216,13 @@ const Footer = () => {
         </section>
 
         <section className=" py-4 font-Questrial">
-          <div className=" px-6 sm:px-8 lg:px-16">
+          <div className=" px-6 sm:px-8 lg:px-10">
             {/* Main Footer Content */}
-            <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-12">
+           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-4 lg:gap-8">
+
               {/* Navigation Links */}
-              <div className="lg:col-span-1">
+            <div className="lg:col-span-4">
+
                 <h3 className="text-xl font-semibold mb-6 text-black">
                   Quick Links
                 </h3>
@@ -249,14 +251,15 @@ const Footer = () => {
               </div>
 
               {/* India Office */}
-              <div className="lg:col-span-1">
+           <div className="lg:col-span-4">
+
                 <div className="flex items-center mb-4">
                   <MapPin className="w-5 h-5 text-customGreen mr-2" />
                   <h3 className="text-xl font-semibold text-black">
                     Asia - India
                   </h3>
                 </div>
-                <div className="space-y-1 text-black ">
+                <div className="space-y-1 text-black  ">
                   <a
                     href={`https://www.google.com/maps/search/${contactInfo.addressIndia}+${contactInfo.addressIndia_Region}+${contactInfo.addressIndia_City}`.replace(
                       / /g,
@@ -293,7 +296,8 @@ const Footer = () => {
               </div>
 
               {/* Canada Office */}
-              <div className="lg:col-span-1">
+            <div className="lg:col-span-4">
+
                 <div className="flex items-center mb-4">
                   <MapPin className="w-5 h-5 text-customGreen mr-2" />
                   <h3 className="text-xl font-semibold text-black">
@@ -336,7 +340,7 @@ const Footer = () => {
               </div>
 
               {/* Social Media Links */}
-              <div className="lg:col-span-1">
+           {/* <div className="lg:col-span-1 ">
                 <h3 className="text-xl font-semibold mb-6 text-black">
                   Connect With Us
                 </h3>
@@ -355,7 +359,7 @@ const Footer = () => {
                     </a>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
