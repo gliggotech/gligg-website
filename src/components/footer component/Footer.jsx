@@ -250,7 +250,7 @@ const Footer = () => {
                 <a
                   href={`https://www.google.com/maps/search/${contactInfo.address1}+${contactInfo.address2}`.replace(
                     / /g,
-                    "+" //TODO supply the link correctly
+                    "+"
                   )}
                   target="_blank"
                 >
