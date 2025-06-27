@@ -43,7 +43,7 @@ const OurDirector = ({ name, position, content, imageUrl }) => {
           <h1 className="text-2xl lg:text-3xl text-customGreen font-bold">
             {name}
           </h1>
-          <span className="text-lg font-bold">{position}</span>
+          <p className="font-semibold tracking-wider">{position}</p>
           <p className="text-base group-hover:text-customGreen leading-relaxed max-w-7xl text-left">
             {content}
           </p>
